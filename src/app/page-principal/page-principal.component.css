@@ -17,3 +17,16 @@ h2{
     position: absolute;
     width: 400px;
 }
+.card-group{
+    margin-bottom: 100px;
+}
+
+.card-img-top{
+    width: 100%;
+    height: 200px;
+}
+
+.subtitulo{
+    margin: 5%;
+    font-size:xx-large;
+}
