@@ -12,8 +12,12 @@ import { AppRoutingModule } from './app-router.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PagePrincipalComponent } from './page-principal/page-principal.component';
+
 import { OfertasComponent } from './ofertas/ofertas.component';
 import { AgregarOfertaComponent } from './agregar-oferta/agregar-oferta.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +25,8 @@ import { AgregarOfertaComponent } from './agregar-oferta/agregar-oferta.componen
     PagePrincipalComponent,
     OfertasComponent,
     AgregarOfertaComponent,
+    HeaderComponent,
+    FooterComponent
 
   ],
   imports: [
