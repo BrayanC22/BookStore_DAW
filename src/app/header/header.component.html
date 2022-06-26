@@ -30,8 +30,10 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-3">
-                        <li class="nav-item"><a class="nav-link text-nowrap"(click)="openDialogSesion()">Iniciar sesión</a></li>
-
+                        <li *ngIf="logged; else login" class="nav-item"><span id="username">{{username}}</span></li>´
+                        <ng-template #login>
+                            <a class="nav-link text-nowrap"(click)="openDialogSesion()">Iniciar sesión</a>
+                        </ng-template>
                     </ul>
                 </div>
             </nav>
