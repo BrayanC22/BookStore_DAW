@@ -3,3 +3,7 @@ header{
     padding-bottom: 1%;
     background-color: #0a141d;
 }
+#username{
+    padding: 1rem;
+    color: wheat;
+}

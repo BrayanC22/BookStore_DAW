@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { OfertasComponent } from './ofertas/ofertas.component';
 import { AgregarOfertaComponent } from './agregar-oferta/agregar-oferta.component';
 import {MatTableModule} from '@angular/material/table';
+import { LoginService } from './services/login.service';
 
 
 
@@ -42,7 +43,7 @@ import {MatTableModule} from '@angular/material/table';
 
   ],
   entryComponents: [LoginComponent],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
