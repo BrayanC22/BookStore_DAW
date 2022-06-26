@@ -1,9 +1,9 @@
 
-export interface OfertasInterface {
+export interface OfertaInterface {
 
     //Imagen: string;
     Temporada: string;
-    Categorías: string;
+    Categorias: string;
     Precio: number;
     Descuento : number;
     Descripcion: string;

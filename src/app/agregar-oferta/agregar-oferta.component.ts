@@ -21,7 +21,7 @@ export class AgregarOfertaComponent implements OnInit {
 
   ofertaNueva = new FormGroup({
     Temporada: new FormControl('',Validators.required),
-    Categorías: new FormControl('',Validators.required),
+    Categorias: new FormControl('',Validators.required),
     Precio: new FormControl('', Validators.required),
     Descuento: new FormControl('', Validators.required),
     Descripcion: new FormControl('', Validators.required)
@@ -33,7 +33,7 @@ export class AgregarOfertaComponent implements OnInit {
     let objToSend: NavigationExtras = {
       queryParams: {
         Temporada: this.ofertaNueva.value.Temporada,
-        Categorías: this.ofertaNueva.value.Categorías,
+        Categorias: this.ofertaNueva.value.Categorias,
         Precio: this.ofertaNueva.value.Precio,
         Descuento: this.ofertaNueva.value.Descuento,
         Descripcion: this.ofertaNueva.value.Descripcion
@@ -43,7 +43,7 @@ export class AgregarOfertaComponent implements OnInit {
     };
 
     this.dialogRef.close(); 
-    this.redirectTo('/ofertas', objToSend);
+    this.redirectTo('/oferta', objToSend);
 
   }
 
