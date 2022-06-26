@@ -5,12 +5,20 @@ import { ActivatedRoute, Router} from '@angular/router';
 import { AgregarOfertaComponent } from '../agregar-oferta/agregar-oferta.component';
 import { OfertaInterface } from '../Interfaces/OfertaInterface';
 
+
 @Component({
   selector: 'app-ofertas',
   templateUrl: './ofertas.component.html',
   styleUrls: ['./ofertas.component.css']
 })
 export class OfertasComponent implements OnInit {
+
+  
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
   dataSource: any = [];
   displayedColumns: string[] = ['Temporada','Categorias', 'Precio','Descuento','Descripcion']
@@ -67,4 +75,14 @@ export class OfertasComponent implements OnInit {
   }
 
 }
+
+
+
+
+
+
+
+
+
+
 
