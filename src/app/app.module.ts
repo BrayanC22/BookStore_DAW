@@ -33,11 +33,13 @@ import {MatTableModule} from '@angular/material/table';
     LoginComponent,
     OfertasComponent,
     AgregarOfertaComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,MatFormFieldModule,ReactiveFormsModule,MatCardModule,MatInputModule,MatSnackBarModule,MatToolbarModule,MatIconModule,MatDialogModule,MatChipsModule,MatButtonModule,
     BrowserAnimationsModule,MatTableModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
