@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router} from '@angular/router';
 import { AgregarOfertaComponent } from '../agregar-oferta/agregar-oferta.component';
-import { OfertasInterface } from '../Interfaces/OfertasInterface';
+import { OfertaInterface } from '../Interfaces/OfertaInterface';
 
 @Component({
   selector: 'app-ofertas',
@@ -13,26 +13,26 @@ import { OfertasInterface } from '../Interfaces/OfertasInterface';
 export class OfertasComponent implements OnInit {
 
   dataSource: any = [];
-  displayedColumns: string[] = ['Temporada','Categorías', 'Precio','Descuento','Descripcion']
+  displayedColumns: string[] = ['Temporada','Categorias', 'Precio','Descuento','Descripcion']
   
   data = [{
     Temporada: 'Verano',      
-    Categorías: 'Ficcion',
-    Precio: 250.00,
+    Categorias: 'Ficcion',
+    Precio: 250,
     Descuento: 20,
     Descripcion: 'Aprovecha esta promoción solo disponible los primeros 3 dias de cada mes'
       },
       {
     Temporada: 'Inverno',      
-    Categorías: 'Fantasia',
-    Precio: 200.00,
+    Categorias: 'Fantasia',
+    Precio: 200,
     Descuento: 15,
     Descripcion: 'Aprovecha esta promoción solo disponible del 5 al 10 de cada mes'
       },
       {
         Temporada: 'Cerrar una temporada',      
-        Categorías: 'Clasicos',
-        Precio: 180.00,
+        Categorias: 'Clasicos',
+        Precio: 180,
         Descuento: 30,
         Descripcion: 'Aprovecha esta promoción solo disponible del 20 al 30 de cada mes'
       }
@@ -56,7 +56,7 @@ export class OfertasComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<OfertasInterface>(this.data as OfertasInterface[]);
+    this.dataSource = new MatTableDataSource<OfertaInterface>(this.data as OfertaInterface[]);
     console.log(this.data);
   }
 

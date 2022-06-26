@@ -41,6 +41,7 @@ import {MatTableModule} from '@angular/material/table';
     BrowserAnimationsModule,MatTableModule
 
   ],
+  entryComponents: [LoginComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
