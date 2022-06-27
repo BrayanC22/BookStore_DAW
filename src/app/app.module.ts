@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { OfertasComponent } from './ofertas/ofertas.component';
 import { AgregarOfertaComponent } from './agregar-oferta/agregar-oferta.component';
 import {MatTableModule} from '@angular/material/table';
+import { ModificarOfertaComponent } from './modificar-oferta/modificar-oferta.component';
 
 
 
@@ -32,7 +33,8 @@ import {MatTableModule} from '@angular/material/table';
     FooterComponent,
     LoginComponent,
     OfertasComponent,
-    AgregarOfertaComponent
+    AgregarOfertaComponent,
+    ModificarOfertaComponent
 
   ],
   imports: [

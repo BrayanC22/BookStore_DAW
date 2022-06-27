@@ -28,7 +28,7 @@ if(this.usuarioLogin.value.usuario == 'oscar' && this.usuarioLogin.value.passwor
 
 }
 else if(this.usuarioLogin.value.usuario == 'yermin' && this.usuarioLogin.value.password == '123456'){
-  this.router.navigate(['/ofertas']);      
+  this.router.navigate(['/oferta']);      
   this.dialogRef.close(); 
 
 }
