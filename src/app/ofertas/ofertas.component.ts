@@ -23,56 +23,20 @@ export class OfertasComponent implements OnInit {
   }
 
   //Arreglo de datos
-  dataSource: any = [];
   listaOferta: OfertaInterface[] = []
   //Arreglo que ayuda a definir las columnas que van a aparecer en la tabla
   displayedColumns: string[] = ['Temporada','Categorias', 'Precio','Descuento','Descripcion', "Modificar"]
   
-  data = [{
-    Temporada: 'Verano',      
-    Categorias: 'Ficcion',
-    Precio: 250,
-    Descuento: 20,
-    Descripcion: 'Aprovecha esta promoción solo disponible los primeros 3 dias de cada mes'
-      },
-      {
-    Temporada: 'Inverno',      
-    Categorias: 'Fantasia',
-    Precio: 200,
-    Descuento: 15,
-    Descripcion: 'Aprovecha esta promoción solo disponible del 5 al 10 de cada mes'
-      },
-      {
-        Temporada: 'Cerrar una temporada',      
-        Categorias: 'Clasicos',
-        Precio: 180,
-        Descuento: 30,
-        Descripcion: 'Aprovecha esta promoción solo disponible del 20 al 30 de cada mes'
-      }
-    ];
+  dataSource = new MatTableDataSource<any>;
   
-  nuevaOferta:any;
-  nav: any;
 
-
-  constructor(private router: Router, private dialog:MatDialog, private ofertaServicio:ServiciosService) { 
-    
-    this.nav = this.router.getCurrentNavigation();
-    this.nuevaOferta = this.nav.extras.state;
-  
-    if (this.nuevaOferta != null)
-    {      
-      console.log(this.nuevaOferta.datosOferta.queryParams);
-      this.data.push(this.nuevaOferta.datosOferta.queryParams);
-    }
+  constructor(public dialog:MatDialog, private ofertaServicio:ServiciosService) { 
     
   };
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<OfertaInterface>(this.data as OfertaInterface[]);
-    console.log(this.data);
-
     this.listaOferta = this.ofertaServicio.getOferta();
+    this.dataSource=new MatTableDataSource(this.listaOferta);
     
   }
 
@@ -86,9 +50,7 @@ export class OfertasComponent implements OnInit {
   // Modificar oferta
   openDialogModificar(Oferta:any){
     //Agregar los parámetros a una lista para enviarlos al componente de modificar.
-    this.dialog.open(ModificarOfertaComponent, {width: '50%'}),{
-      data:Oferta 
-  }
+    this.dialog.open(ModificarOfertaComponent, {data:Oferta, width: '50%'})
 
   }
   

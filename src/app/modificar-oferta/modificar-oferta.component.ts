@@ -19,25 +19,26 @@ export class ModificarOfertaComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private ofertaServicio: ServiciosService, private router: Router,  
     @Inject(MAT_DIALOG_DATA) public editarDatos: any, private dialogRef: MatDialogRef<ModificarOfertaComponent>) {   
 
+      
   } 
 
 
   ngOnInit(): void {
-
     this.formOferta = this.formBuilder.group({
-    Temporada: ['',Validators.required],
-    Categorias: ['',Validators.required],
-    Precio: ['', Validators.required],
-    Descuento: ['', Validators.required],
-    Descripcion: ['', Validators.required]
-    })
+      Temporada: ['',Validators.required],
+      Categorias: ['',Validators.required],
+      Precio: ['', Validators.required],
+      Descuento: ['', Validators.required],
+      Descripcion: ['', Validators.required]
+      });
 
+      if(this.editarDatos){
       this.formOferta.controls['Temporada'].setValue(this.editarDatos.Temporada),
       this.formOferta.controls['Categorias'].setValue(this.editarDatos.Categorias),
       this.formOferta.controls['Precio'].setValue(this.editarDatos.Precio),
       this.formOferta.controls['Descuento'].setValue(this.editarDatos.Descuento),
       this.formOferta.controls['Descripcion'].setValue(this.editarDatos.Descripcion)
-
+      }
     
   }
 
@@ -52,17 +53,18 @@ export class ModificarOfertaComponent implements OnInit {
   })
    */
   
-  
+  //Esto sirve para la modificación
   onSubmit(){
     const oferta: OfertaInterface = {
       Temporada: this.formOferta.value.Temporada,
       Categorias: this.formOferta.value.Categorias,
       Precio: this.formOferta.value.Precio,
-      Descuento: this.formOferta.value.Descripcion,
+      Descuento: this.formOferta.value.Descuento,
       Descripcion: this.formOferta.value.Descripcion
     }
     this.router.navigate(['/'])
-    .then(()=>this.router.navigate(['/'],{state:{editarDatos: this.ofertaServicio.ModificarOferta(oferta)}}))
+    .then(()=>this.router.navigate(['/oferta'],{state:{editarDatos: this.ofertaServicio.ModificarOferta(oferta)}}))
+    this.cancelar();
   }
 
   
