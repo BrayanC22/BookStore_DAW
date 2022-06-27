@@ -5,6 +5,7 @@ import { ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 import { AgregarOfertaComponent } from '../agregar-oferta/agregar-oferta.component';
 import { OfertaInterface } from '../Interfaces/OfertaInterface';
 import { ModificarOfertaComponent } from '../modificar-oferta/modificar-oferta.component';
+import { ServiciosService } from '../ServiciOferta/servicios.service';
 
 
 @Component({
@@ -23,6 +24,7 @@ export class OfertasComponent implements OnInit {
 
   //Arreglo de datos
   dataSource: any = [];
+  listaOferta: OfertaInterface[] = []
   //Arreglo que ayuda a definir las columnas que van a aparecer en la tabla
   displayedColumns: string[] = ['Temporada','Categorias', 'Precio','Descuento','Descripcion', "Modificar"]
   
@@ -53,7 +55,7 @@ export class OfertasComponent implements OnInit {
   nav: any;
 
 
-  constructor(private router: Router, private dialog:MatDialog) { 
+  constructor(private router: Router, private dialog:MatDialog, private ofertaServicio:ServiciosService) { 
     
     this.nav = this.router.getCurrentNavigation();
     this.nuevaOferta = this.nav.extras.state;
@@ -69,6 +71,9 @@ export class OfertasComponent implements OnInit {
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<OfertaInterface>(this.data as OfertaInterface[]);
     console.log(this.data);
+
+    this.listaOferta = this.ofertaServicio.getOferta();
+    
   }
 
   openDialogAgregar(){
@@ -81,7 +86,7 @@ export class OfertasComponent implements OnInit {
   // Modificar oferta
   openDialogModificar(Oferta:any){
     //Agregar los parámetros a una lista para enviarlos al componente de modificar.
-    this.dialog.open(ModificarOfertaComponent),{
+    this.dialog.open(ModificarOfertaComponent, {width: '50%'}),{
       data:Oferta 
   }
 

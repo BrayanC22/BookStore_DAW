@@ -32,11 +32,11 @@ export class ModificarOfertaComponent implements OnInit {
     Descripcion: ['', Validators.required]
     })
 
-      this.formOferta.controls['cedula'].setValue(this.editarDatos.cedula),
-      this.formOferta.controls['nombre'].setValue(this.editarDatos.nombre),
-      this.formOferta.controls['apellido'].setValue(this.editarDatos.apellido),
-      this.formOferta.controls['direccion'].setValue(this.editarDatos.direccion),
-      this.formOferta.controls['edad'].setValue(this.editarDatos.edad)
+      this.formOferta.controls['Temporada'].setValue(this.editarDatos.Temporada),
+      this.formOferta.controls['Categorias'].setValue(this.editarDatos.Categorias),
+      this.formOferta.controls['Precio'].setValue(this.editarDatos.Precio),
+      this.formOferta.controls['Descuento'].setValue(this.editarDatos.Descuento),
+      this.formOferta.controls['Descripcion'].setValue(this.editarDatos.Descripcion)
 
     
   }
