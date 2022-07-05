@@ -22,12 +22,9 @@ export class LoginComponent {
   constructor(private router: Router, private dialogRef: MatDialogRef<LoginComponent>, private loginService: LoginService) { }
 
 
-}
-else if(this.usuarioLogin.value.usuario == 'yermin' && this.usuarioLogin.value.password == '123456'){
-  this.router.navigate(['/oferta']);      
-  this.dialogRef.close(); 
 
-  onSubmit() {
+
+  onSubmit(){
 
     if(this.loginService.login(this.usuarioLogin.value.usuario??'', this.usuarioLogin.value.password??'')){
       this.router.navigate(['/oferta']);
@@ -39,6 +36,5 @@ else if(this.usuarioLogin.value.usuario == 'yermin' && this.usuarioLogin.value.p
     }
   }
 
+
 }
-
-
