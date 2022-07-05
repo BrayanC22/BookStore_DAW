@@ -1,0 +1,31 @@
+<mat-card> 
+    <div style="text-align:center;">
+        <mat-card-title>Modificar Oferta</mat-card-title>
+    </div>   
+    <br>
+    <form [formGroup]='formOferta'>
+        <mat-form-field class="campos-field">
+            <input matInput placeholder="Temporada" formControlName="Temporada" #Temporada>
+        </mat-form-field>
+
+        <mat-form-field class="campos-field">
+            <input matInput placeholder="Categorias" formControlName="Categorias" #Categorias>
+        </mat-form-field>
+
+        <mat-form-field class="campos-field">
+            <input matInput placeholder="Precio" formControlName="Precio" #Precio>
+        </mat-form-field>
+
+        <mat-form-field class="campos-field">
+            <input matInput placeholder="Descuento" formControlName="Descuento" #Descuento>
+        </mat-form-field>
+
+        <mat-form-field class="campos-field">
+            <input matInput placeholder="Descripcion" formControlName="Descripcion" #Descripcion>
+        </mat-form-field>
+
+        <button mat-raised-button [disabled]="formOferta.invalid" (click)="onSubmit()">Aceptar</button>  
+        <button mat-raised-button color="accent" (click)="cancelar()">Cancelar</button> 
+    </form>
+    
+</mat-card>

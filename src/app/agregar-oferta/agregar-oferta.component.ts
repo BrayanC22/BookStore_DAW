@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, OnInit, Inject } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NavigationExtras, Router } from '@angular/router';
+import { OfertaInterface } from '../Interfaces/OfertaInterface';
+import { ServiciosService } from '../ServiciOferta/servicios.service';
 
 @Component({
   selector: 'app-agregar-oferta',
@@ -11,45 +13,37 @@ import { NavigationExtras, Router } from '@angular/router';
 export class AgregarOfertaComponent implements OnInit {
 
 
+  formOferta! : FormGroup;
 
-  constructor(private router: Router, private dialogRef: MatDialogRef<AgregarOfertaComponent>) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private dialogRef: MatDialogRef<AgregarOfertaComponent>,
+    private servicioOferta: ServiciosService,@Inject(MAT_DIALOG_DATA) public editarDatos: any,) { }
 
   ngOnInit(): void {
+    this.formOferta = new FormGroup({
+      Temporada: new FormControl('',Validators.required),
+      Categorias: new FormControl('',Validators.required),
+      Precio: new FormControl('', Validators.required),
+      Descuento: new FormControl('', Validators.required),
+      Descripcion: new FormControl('', Validators.required)
+    })
   }
 
   //navigationExtras: NavigationExtras={};
 
-  ofertaNueva = new FormGroup({
-    Temporada: new FormControl('',Validators.required),
-    Categorias: new FormControl('',Validators.required),
-    Precio: new FormControl('', Validators.required),
-    Descuento: new FormControl('', Validators.required),
-    Descripcion: new FormControl('', Validators.required)
-  })
-
   
   onSubmit()
   {
-    let objToSend: NavigationExtras = {
-      queryParams: {
-        Temporada: this.ofertaNueva.value.Temporada,
-        Categorias: this.ofertaNueva.value.Categorias,
-        Precio: this.ofertaNueva.value.Precio,
-        Descuento: this.ofertaNueva.value.Descuento,
-        Descripcion: this.ofertaNueva.value.Descripcion
-      },
-      skipLocationChange: false,
-      fragment: 'top' 
-    };
-
-    this.dialogRef.close(); 
-    this.redirectTo('/oferta', objToSend);
-
-  }
-
-  redirectTo(uri:string, objToSend:NavigationExtras){
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-    this.router.navigate([uri],{ state: { datosOferta: objToSend}}));
+    const oferta: OfertaInterface = {
+      Temporada: this.formOferta.value.Temporada,
+      Categorias: this.formOferta.value.Categorias,
+      Precio: this.formOferta.value.Precio,
+      Descuento: this.formOferta.value.Descuento,
+      Descripcion: this.formOferta.value.Descripcion
+      
+    }
+    this.router.navigate(['/'])
+    .then(()=>this.router.navigate(['/oferta'],{state:{editarDatos: this.servicioOferta.agregarOferta(oferta)}}))
+    this.dialogRef.close();
   }
 
   cancelar()
