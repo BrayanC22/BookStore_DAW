@@ -4,6 +4,19 @@ header{
     background-color: #0a141d;
 }
 #username{
-    padding: 1rem;
-    color: wheat;
+    color:aqua;
+    text-transform: uppercase;
+}
+h3{
+    color: white;
+}
+span{
+    padding: 0%;
+    margin: 0%;
+}
+a{
+    color: white;
+}
+a:hover, a:focus{
+    color: aqua;
 }
