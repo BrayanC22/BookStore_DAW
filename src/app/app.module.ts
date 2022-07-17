@@ -24,6 +24,10 @@ import {MatTableModule} from '@angular/material/table';
 
 import { ModificarOfertaComponent } from './modificar-oferta/modificar-oferta.component';
 import { LoginService } from './services/login.service';
+import { AgregarLibroComponent } from './agregar-libro/agregar-libro.component';
+import { LibroComponent } from './libro/libro.component';
+import { ModificarLibroComponent } from './modificar-libro/modificar-libro.component';
+
 
 
 
@@ -37,7 +41,11 @@ import { LoginService } from './services/login.service';
     LoginComponent,
     OfertasComponent,
     AgregarOfertaComponent,
-    ModificarOfertaComponent
+    ModificarOfertaComponent,
+    AgregarLibroComponent,
+    LibroComponent,
+    ModificarLibroComponent,
+  
 
   ],
   imports: [
