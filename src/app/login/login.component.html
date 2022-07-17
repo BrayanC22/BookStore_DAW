@@ -1,8 +1,79 @@
-<div *ngIf="alert" class="alert alert-danger alert-dismissible" role="alert" data-auto-dismiss>
-    <strong>Acceso incorrecto!</strong> Verificar el usuario y/o la contraseña.
+
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+
+
+<div class="section">
+    <div *ngIf="alert" class="alert alert-danger alert-dismissible" id="Alerta" role="alert" data-auto-dismiss>
+        <strong>Acceso incorrecto!</strong> Verificar el usuario y/o la contraseña.
+    </div>
+    <div class="container">
+        <div class="row full-height justify-content-center">
+            <div class="col-12 text-center align-self-center py-5">
+                <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                    <h6 class="Opciones"><span>Ingreso</span><span>Registro</span></h6>
+                      <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                      <label for="reg-log"></label>
+                    <div class="card-3d-wrap mx-auto">
+                        <div class="card-3d-wrapper">
+                            <div class="card-front">
+                                <div class="center-wrap">
+                                    <div class="section text-center">
+
+
+                                        <h4 class="Nventana">Iniciar sesion</h4>
+                                        <form [formGroup]="usuarioLogin" (ngSubmit)="onSubmit()">
+                                            <div class="form-group" >
+                                                <input type="text" name="logemail" class="form-style" placeholder="Usuario" id="logemail" autocomplete="off" formControlName="usuario">
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>	
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="logpass" class="form-style" placeholder="Contraseña" id="logpass" autocomplete="off" formControlName="password">
+                                                <i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+                                            <button class="btn mt-4" mat-raised-button [disabled] = "!usuarioLogin.valid">Ingresar</button>
+                                        </form>
+
+                                        <p class="mb-0 mt-4 text-center"><a href="#0" class="link">¿Ha olvidado su contraseña?</a></p>
+                                      </div>
+                                  </div>
+                              </div>
+                            <div class="card-back">
+                                <div class="center-wrap">
+                                    <div class="section text-center">
+
+
+                                        <h4 class="Nventana">Registrarse</h4>
+                                        <div class="form-group">
+                                            <input type="text" name="logname" class="form-style" placeholder="Nombres completos" id="logname" autocomplete="off">
+                                            <i class="input-icon uil uil-user"></i>
+                                        </div>	
+                                        <div class="form-group mt-2">
+                                            <input type="text" name="logemail" class="form-style" placeholder="Usuario" id="logemail" autocomplete="off">
+                                            <i class="input-icon uil uil-at"></i>
+                                        </div>	
+                                        <div class="form-group mt-2">
+                                            <input type="password" name="logpass" class="form-style" placeholder="Contraseña" id="logpass" autocomplete="off">
+                                            <i class="input-icon uil uil-lock-alt"></i>
+                                        </div>
+                                        <a href="#" class="btn mt-4">Confirmar</a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+    </div>
 </div>
+
+
+
+
 <mat-card>    
+    
     <form [formGroup]="usuarioLogin" (ngSubmit)="onSubmit()">
+        <h2>INICIAR SESIÓN</h2>
         <mat-form-field class="campos-field">
             <input matInput placeholder="Usuario" formControlName="usuario">
         </mat-form-field>
