@@ -17,23 +17,22 @@
                 </div>
                 <div id="MenuNavegacion" class="collapse navbar-collapse">
                     <ul class="navbar-nav ms-3">
+                        
+                        <li *ngIf="logged; else login" class="nav-item"><a class="nav-link text-nowrap" id="username">{{username}}</a></li>
+                            <ng-template #login>
+                                <a class="nav-link text-nowrap"(click)="openDialogSesion()">Iniciar sesión</a>
+                            </ng-template>
                         <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Libros</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Autores</a></li>
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown">Opciones de soporte</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Configuración</a></li>
-                                <li><a class="dropdown-item" href="#">Cuenta</a></li>
-                                <li><a class="dropdown-item" href="#">Información</a></li>
+                            <ul class="dropdown-menu bg-primary">
+                                <li><a class="dropdown-item bg-primary" href="#">Configuración</a></li>
+                                <li><a class="dropdown-item bg-primary" href="#">Cuenta</a></li>
+                                <li><a class="dropdown-item bg-primary" href="#">Información</a></li>
                             </ul>
                         </li>
-                    </ul>
-                    <ul class="navbar-nav ms-3">
-                        <li *ngIf="logged; else login" class="nav-item"><span id="username">{{username}}</span></li>´
-                        <ng-template #login>
-                            <a class="nav-link text-nowrap"(click)="openDialogSesion()">Iniciar sesión</a>
-                        </ng-template>
                     </ul>
                 </div>
             </nav>
