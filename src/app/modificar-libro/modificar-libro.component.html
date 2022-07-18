@@ -1,0 +1,36 @@
+<mat-card> 
+    <div style="text-align:center;">
+        <mat-card-title>Modificar Oferta</mat-card-title>
+    </div>   
+    <br>
+    <form [formGroup]='formLibro'>
+        <mat-form-field class="campos-field">
+            <input matInput placeholder="Titulo" formControlName="Titulo" #Titulo>
+        </mat-form-field>
+
+        <mat-form-field class="campos-field">
+            <input matInput placeholder="Nombre" formControlName="Nombre" #Nombre>
+        </mat-form-field>
+
+        <mat-form-field class="campos-field">
+            <input matInput placeholder="Categoria" formControlName="Categoria" #Categoria>
+        </mat-form-field>
+
+        <mat-form-field class="campos-field">
+            <input matInput placeholder="Precio" formControlName="Precio" #Precio>
+        </mat-form-field>
+
+        <mat-form-field class="campos-field">
+            <input matInput placeholder="Descripcion" formControlName="Descripcion" #Descripcion>
+        </mat-form-field>
+
+        <mat-form-field class="campos-field">
+            <input matInput placeholder="Iva" formControlName="Iva" #Iva>
+        </mat-form-field>
+
+
+        <button mat-raised-button [disabled]="formLibro.invalid" (click)="onSubmit()">Aceptar</button>  
+        <button mat-raised-button color="accent" (click)="cancelar()">Cancelar</button> 
+    </form>
+    
+</mat-card>

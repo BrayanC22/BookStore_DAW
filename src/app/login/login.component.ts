@@ -27,7 +27,7 @@ export class LoginComponent {
   onSubmit(){
 
     if(this.loginService.login(this.usuarioLogin.value.usuario??'', this.usuarioLogin.value.password??'')){
-      this.router.navigate(['/oferta']);
+      this.router.navigate(['/libro']);
       this.dialogRef.close();
     }
     else {
