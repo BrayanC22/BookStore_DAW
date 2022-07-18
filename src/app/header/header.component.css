@@ -20,3 +20,8 @@ a{
 a:hover, a:focus{
     color: aqua;
 }
+
+#navegacion{
+    background-color: #0a141d !important;
+    border-bottom: #0a141d !important;
+}

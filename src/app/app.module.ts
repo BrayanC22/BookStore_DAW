@@ -24,9 +24,14 @@ import {MatTableModule} from '@angular/material/table';
 
 import { ModificarOfertaComponent } from './modificar-oferta/modificar-oferta.component';
 import { LoginService } from './services/login.service';
+
+import { CarritoComponent } from './VentaLibro/carrito/carrito.component';
+import { PagoComponent } from './VentaLibro/pago/pago.component';
+
 import { AgregarLibroComponent } from './agregar-libro/agregar-libro.component';
 import { LibroComponent } from './libro/libro.component';
 import { ModificarLibroComponent } from './modificar-libro/modificar-libro.component';
+
 
 
 
@@ -42,10 +47,15 @@ import { ModificarLibroComponent } from './modificar-libro/modificar-libro.compo
     OfertasComponent,
     AgregarOfertaComponent,
     ModificarOfertaComponent,
+
+    CarritoComponent,
+    PagoComponent
+
     AgregarLibroComponent,
     LibroComponent,
     ModificarLibroComponent,
   
+
 
   ],
   imports: [
