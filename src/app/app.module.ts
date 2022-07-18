@@ -49,7 +49,7 @@ import { ModificarLibroComponent } from './modificar-libro/modificar-libro.compo
     ModificarOfertaComponent,
 
     CarritoComponent,
-    PagoComponent
+    PagoComponent,
 
     AgregarLibroComponent,
     LibroComponent,
