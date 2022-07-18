@@ -24,6 +24,8 @@ import {MatTableModule} from '@angular/material/table';
 
 import { ModificarOfertaComponent } from './modificar-oferta/modificar-oferta.component';
 import { LoginService } from './services/login.service';
+import { CarritoComponent } from './VentaLibro/carrito/carrito.component';
+import { PagoComponent } from './VentaLibro/pago/pago.component';
 
 
 
@@ -37,7 +39,9 @@ import { LoginService } from './services/login.service';
     LoginComponent,
     OfertasComponent,
     AgregarOfertaComponent,
-    ModificarOfertaComponent
+    ModificarOfertaComponent,
+    CarritoComponent,
+    PagoComponent
 
   ],
   imports: [
