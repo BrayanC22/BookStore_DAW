@@ -3,3 +3,25 @@ header{
     padding-bottom: 1%;
     background-color: #0a141d;
 }
+#username{
+    color:aqua;
+    text-transform: uppercase;
+}
+h3{
+    color: white;
+}
+span{
+    padding: 0%;
+    margin: 0%;
+}
+a{
+    color: white;
+}
+a:hover, a:focus{
+    color: aqua;
+}
+
+#navegacion{
+    background-color: #0a141d !important;
+    border-bottom: #0a141d !important;
+}

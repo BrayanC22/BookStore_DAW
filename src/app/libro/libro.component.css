@@ -1,0 +1,1776 @@
+.subtit{
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+/*titulo2*/
+.tiulo2{
+padding-top:9px;
+padding-left:25px;
+font-family:'Times New Roman';
+}
+
+#accordionFlushExample{
+padding-left:15px;  
+}
+
+/*Informacion*/
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+
+.container1 {
+  margin-top: 50px;
+  margin-bottom:  50px;
+}
+
+.title {
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 10px
+}
+
+.content {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden
+}
+
+.content .content-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s
+}
+
+.content:hover .content-overlay {
+  opacity: 1
+}
+
+.content-image {
+  width: 100%
+}
+
+img {
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s
+}
+
+.content:hover .content-details {
+  top: 50%;
+  left: 50%;
+  opacity: 1
+}
+
+.content-details h3 {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase
+}
+
+.content-details p {
+  color: #fff;
+  font-size: 0.8em
+}
+
+.fadeIn-bottom {
+  top: 80%
+}
+
+
+/*Inicio*/
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  overflow: hidden;
+  margin: auto;
+  padding: 60px 0;
+}
+
+.header {
+  height: 40%;
+  /* 02 */
+  background-image: linear-gradient(to top, rgba(251, 194, 235, 0.486) 0%, hsla(218, 68%, 79%, 0.514) 100%), url(https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+
+}
+
+.head {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: rgb(39, 38, 43);
+
+}
+
+.titulo {
+  font-family: serif;
+  font-size: 50px;
+}
+
+.preguntas,
+h3 {
+
+  font-family: Georgia;
+  font-size: 25px;
+  padding: 6px;
+  width: 100%;
+  padding-left: 8px;
+}
+
+.questions__offer {
+
+  text-align: center;
+  font-family: Georgia;
+  font-size: 20px;
+  padding: 8px;
+  width: 100%;
+  background-image: url(https://images.unsplash.com/photo-1629196911514-cfd8d628ba26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=399&q=80);
+
+}
+
+.questions__offer a {
+  background-color: whitesmoke;
+  padding: 5px;
+ 
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+* {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+
+.imgLoader {
+  position: fixed;
+  -webkit-animation: preLoad 1s steps(1);
+  animation: preLoad 1s steps(1);
+  width: 1px;
+  height: 1px;
+}
+
+@-webkit-keyframes preLoad {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+  }
+
+  10% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+  }
+
+  30% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+  }
+
+  100% {
+    display: none;
+  }
+}
+
+@keyframes preLoad {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+  }
+
+  10% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+  }
+
+  30% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+  }
+
+  100% {
+    display: none;
+  }
+}
+
+.container {
+  position: relative;
+  width: 420px;
+  border: #fff solid 2px;
+  border-radius: 4px;
+  height: 420px;
+}
+
+.title {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  font-size: 2em;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+}
+
+.credit {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+.book {
+  position: relative;
+  perspective: 630px;
+  perspective-origin: center 50px;
+  transform: scale(1.2);
+  filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.25));
+}
+
+.page {
+  width: 210px;
+  height: 300px;
+  background-color: #bbb;
+  position: absolute;
+  top: 0px;
+  right: 50%;
+  transform-origin: 100% 100%;
+  border: solid #555 2px;
+  background-size: 420px 300px;
+  background-position: center;
+  transform-style: preserve-3d;
+}
+
+.page:nth-child(1) {
+  transform: rotateX(60deg) rotateY(3deg);
+}
+
+.page:nth-child(2) {
+  transform: rotateX(60deg) rotateY(4.5deg);
+}
+
+.page:nth-child(3) {
+  transform: rotateX(60deg) rotateY(6deg);
+  -webkit-animation: nextPage 25s infinite -24s steps(1);
+  animation: nextPage 25s infinite -24s steps(1);
+  background-size: 420px 300px;
+  background-position: -2px -2px;
+}
+
+.page:nth-child(4) {
+  transform: rotateX(60deg) rotateY(177deg);
+}
+
+.page:nth-child(5) {
+  transform: rotateX(60deg) rotateY(175.5deg);
+}
+
+.page:nth-child(6) {
+  transform: rotateX(60deg) rotateY(174deg);
+  overflow: hidden;
+}
+
+.page:nth-child(6)::after {
+  content: "";
+  width: 210px;
+  height: 300px;
+  position: absolute;
+  top: 0px;
+  right: 0%;
+  transform-origin: center;
+  transform: rotateY(180deg);
+  -webkit-animation: nextPage 25s -20s infinite steps(1);
+  animation: nextPage 25s -20s infinite steps(1);
+  background-size: 420px 300px;
+  background-position: 100% -2px;
+}
+
+@-webkit-keyframes nextPage {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+  }
+}
+
+@keyframes nextPage {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+  }
+}
+
+.gap {
+  width: 10px;
+  height: 300px;
+  background: none;
+  transform: rotateX(60deg);
+  transform-origin: bottom;
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 5px);
+}
+
+.gap::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: #555;
+  width: 10px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.pages,
+.flips {
+  transform-style: preserve-3d;
+}
+
+.flip {
+  width: 32px;
+  height: 300px;
+  position: absolute;
+  top: 0px;
+  transform-origin: 100% 100%;
+  right: 100%;
+  border: solid #555;
+  border-width: 2px 0px;
+  perspective: 4200px;
+  perspective-origin: center;
+  transform-style: preserve-3d;
+  background-size: 420px 300px;
+}
+
+.flip::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0%;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  background-size: 420px 300px;
+}
+
+.flip.flip1 {
+  right: 50%;
+  -webkit-animation: flip1 5s infinite ease-in-out;
+  animation: flip1 5s infinite ease-in-out;
+  border-width: 2px 2px 2px 0;
+}
+
+.flip.flip1::after {
+  -webkit-animation: nextFlip1 25s -20s infinite steps(1);
+  animation: nextFlip1 25s -20s infinite steps(1);
+}
+
+.flip:not(.flip1) {
+  right: calc(100% - 2px);
+  top: -2px;
+  transform-origin: right;
+  -webkit-animation: flip2 5s ease-in-out infinite;
+  animation: flip2 5s ease-in-out infinite;
+}
+
+.flip.flip2::after {
+  -webkit-animation: nextFlip2 25s -20s infinite steps(1);
+  animation: nextFlip2 25s -20s infinite steps(1);
+}
+
+.flip.flip3::after {
+  -webkit-animation: nextFlip3 25s -20s infinite steps(1);
+  animation: nextFlip3 25s -20s infinite steps(1);
+}
+
+.flip.flip4::after {
+  -webkit-animation: nextFlip4 25s -20s infinite steps(1);
+  animation: nextFlip4 25s -20s infinite steps(1);
+}
+
+.flip.flip5::after {
+  -webkit-animation: nextFlip5 25s -20s infinite steps(1);
+  animation: nextFlip5 25s -20s infinite steps(1);
+}
+
+.flip.flip6::after {
+  -webkit-animation: nextFlip6 25s -20s infinite steps(1);
+  animation: nextFlip6 25s -20s infinite steps(1);
+}
+
+.flip.flip7::after {
+  -webkit-animation: nextFlip7 25s -20s infinite steps(1);
+  animation: nextFlip7 25s -20s infinite steps(1);
+}
+
+.flip.flip7 {
+  width: 30px;
+  border-width: 2px 0px 2px 2px;
+}
+
+.flip.flip7::after {
+  -webkit-animation: nextFlip7 25s -20s infinite steps(1);
+  animation: nextFlip7 25s -20s infinite steps(1);
+}
+
+@-webkit-keyframes flip1 {
+
+  0%,
+  20% {
+    transform: rotateX(60deg) rotateY(6deg);
+  }
+
+  80%,
+  100% {
+    transform: rotateX(60deg) rotateY(174deg);
+  }
+}
+
+@keyframes flip1 {
+
+  0%,
+  20% {
+    transform: rotateX(60deg) rotateY(6deg);
+  }
+
+  80%,
+  100% {
+    transform: rotateX(60deg) rotateY(174deg);
+  }
+}
+
+@-webkit-keyframes flip2 {
+
+  0%,
+  20% {
+    transform: rotateY(0deg) translateY(0px);
+  }
+
+  50% {
+    transform: rotateY(-15deg) translateY(0px);
+  }
+}
+
+@keyframes flip2 {
+
+  0%,
+  20% {
+    transform: rotateY(0deg) translateY(0px);
+  }
+
+  50% {
+    transform: rotateY(-15deg) translateY(0px);
+  }
+}
+
+@-webkit-keyframes nextFlip1 {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -178px -2px;
+    transform: rotateY(0deg);
+  }
+
+  10% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -210px -2px;
+    transform: rotateY(180deg);
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -178px -2px;
+    transform: rotateY(0deg);
+  }
+
+  30% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -210px -2px;
+    transform: rotateY(180deg);
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -178px -2px;
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -210px -2px;
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -178px -2px;
+    transform: rotateY(0deg);
+  }
+
+  70% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -210px -2px;
+    transform: rotateY(180deg);
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -178px -2px;
+    transform: rotateY(0deg);
+  }
+
+  90% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -210px -2px;
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes nextFlip1 {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -178px -2px;
+    transform: rotateY(0deg);
+  }
+
+  10% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -210px -2px;
+    transform: rotateY(180deg);
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -178px -2px;
+    transform: rotateY(0deg);
+  }
+
+  30% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -210px -2px;
+    transform: rotateY(180deg);
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -178px -2px;
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -210px -2px;
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -178px -2px;
+    transform: rotateY(0deg);
+  }
+
+  70% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -210px -2px;
+    transform: rotateY(180deg);
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -178px -2px;
+    transform: rotateY(0deg);
+  }
+
+  90% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -210px -2px;
+    transform: rotateY(180deg);
+  }
+}
+
+@-webkit-keyframes nextFlip2 {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -148px -2px;
+    transform: rotateY(0deg);
+  }
+
+  10.5% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -238px -2px;
+    transform: rotateY(180deg);
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -148px -2px;
+    transform: rotateY(0deg);
+  }
+
+  30.5% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -238px -2px;
+    transform: rotateY(180deg);
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -148px -2px;
+    transform: rotateY(0deg);
+  }
+
+  50.5% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -238px -2px;
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -148px -2px;
+    transform: rotateY(0deg);
+  }
+
+  70.5% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -238px -2px;
+    transform: rotateY(180deg);
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -148px -2px;
+    transform: rotateY(0deg);
+  }
+
+  90.5% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -238px -2px;
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes nextFlip2 {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -148px -2px;
+    transform: rotateY(0deg);
+  }
+
+  10.5% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -238px -2px;
+    transform: rotateY(180deg);
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -148px -2px;
+    transform: rotateY(0deg);
+  }
+
+  30.5% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -238px -2px;
+    transform: rotateY(180deg);
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -148px -2px;
+    transform: rotateY(0deg);
+  }
+
+  50.5% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -238px -2px;
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -148px -2px;
+    transform: rotateY(0deg);
+  }
+
+  70.5% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -238px -2px;
+    transform: rotateY(180deg);
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -148px -2px;
+    transform: rotateY(0deg);
+  }
+
+  90.5% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -238px -2px;
+    transform: rotateY(180deg);
+  }
+}
+
+@-webkit-keyframes nextFlip3 {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -118px -2px;
+    transform: rotateY(0deg);
+  }
+
+  11% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -268px -2px;
+    transform: rotateY(180deg);
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -118px -2px;
+    transform: rotateY(0deg);
+  }
+
+  31% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -268px -2px;
+    transform: rotateY(180deg);
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -118px -2px;
+    transform: rotateY(0deg);
+  }
+
+  51% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -268px -2px;
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -118px -2px;
+    transform: rotateY(0deg);
+  }
+
+  71% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -268px -2px;
+    transform: rotateY(180deg);
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -118px -2px;
+    transform: rotateY(0deg);
+  }
+
+  91% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -268px -2px;
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes nextFlip3 {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -118px -2px;
+    transform: rotateY(0deg);
+  }
+
+  11% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -268px -2px;
+    transform: rotateY(180deg);
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -118px -2px;
+    transform: rotateY(0deg);
+  }
+
+  31% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -268px -2px;
+    transform: rotateY(180deg);
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -118px -2px;
+    transform: rotateY(0deg);
+  }
+
+  51% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -268px -2px;
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -118px -2px;
+    transform: rotateY(0deg);
+  }
+
+  71% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -268px -2px;
+    transform: rotateY(180deg);
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -118px -2px;
+    transform: rotateY(0deg);
+  }
+
+  91% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -268px -2px;
+    transform: rotateY(180deg);
+  }
+}
+
+@-webkit-keyframes nextFlip4 {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -88px -2px;
+    transform: rotateY(0deg);
+  }
+
+  11.5% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -298px -2px;
+    transform: rotateY(180deg);
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -88px -2px;
+    transform: rotateY(0deg);
+  }
+
+  31.5% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -298px -2px;
+    transform: rotateY(180deg);
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -88px -2px;
+    transform: rotateY(0deg);
+  }
+
+  51.5% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -298px -2px;
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -88px -2px;
+    transform: rotateY(0deg);
+  }
+
+  71.5% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -298px -2px;
+    transform: rotateY(180deg);
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -88px -2px;
+    transform: rotateY(0deg);
+  }
+
+  91.5% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -298px -2px;
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes nextFlip4 {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -88px -2px;
+    transform: rotateY(0deg);
+  }
+
+  11.5% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -298px -2px;
+    transform: rotateY(180deg);
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -88px -2px;
+    transform: rotateY(0deg);
+  }
+
+  31.5% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -298px -2px;
+    transform: rotateY(180deg);
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -88px -2px;
+    transform: rotateY(0deg);
+  }
+
+  51.5% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -298px -2px;
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -88px -2px;
+    transform: rotateY(0deg);
+  }
+
+  71.5% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -298px -2px;
+    transform: rotateY(180deg);
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -88px -2px;
+    transform: rotateY(0deg);
+  }
+
+  91.5% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -298px -2px;
+    transform: rotateY(180deg);
+  }
+}
+
+@-webkit-keyframes nextFlip5 {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -58px -2px;
+    transform: rotateY(0deg);
+  }
+
+  12% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -328px -2px;
+    transform: rotateY(180deg);
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -58px -2px;
+    transform: rotateY(0deg);
+  }
+
+  32% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -328px -2px;
+    transform: rotateY(180deg);
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -58px -2px;
+    transform: rotateY(0deg);
+  }
+
+  52% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -328px -2px;
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -58px -2px;
+    transform: rotateY(0deg);
+  }
+
+  72% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -328px -2px;
+    transform: rotateY(180deg);
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -58px -2px;
+    transform: rotateY(0deg);
+  }
+
+  92% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -328px -2px;
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes nextFlip5 {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -58px -2px;
+    transform: rotateY(0deg);
+  }
+
+  12% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -328px -2px;
+    transform: rotateY(180deg);
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -58px -2px;
+    transform: rotateY(0deg);
+  }
+
+  32% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -328px -2px;
+    transform: rotateY(180deg);
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -58px -2px;
+    transform: rotateY(0deg);
+  }
+
+  52% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -328px -2px;
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -58px -2px;
+    transform: rotateY(0deg);
+  }
+
+  72% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -328px -2px;
+    transform: rotateY(180deg);
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -58px -2px;
+    transform: rotateY(0deg);
+  }
+
+  92% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -328px -2px;
+    transform: rotateY(180deg);
+  }
+}
+
+@-webkit-keyframes nextFlip6 {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -28px -2px;
+    transform: rotateY(0deg);
+  }
+
+  12.5% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -358px -2px;
+    transform: rotateY(180deg);
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -28px -2px;
+    transform: rotateY(0deg);
+  }
+
+  32.5% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -358px -2px;
+    transform: rotateY(180deg);
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -28px -2px;
+    transform: rotateY(0deg);
+  }
+
+  52.5% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -358px -2px;
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -28px -2px;
+    transform: rotateY(0deg);
+  }
+
+  72.5% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -358px -2px;
+    transform: rotateY(180deg);
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -28px -2px;
+    transform: rotateY(0deg);
+  }
+
+  92.5% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -358px -2px;
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes nextFlip6 {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -28px -2px;
+    transform: rotateY(0deg);
+  }
+
+  12.5% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -358px -2px;
+    transform: rotateY(180deg);
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -28px -2px;
+    transform: rotateY(0deg);
+  }
+
+  32.5% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -358px -2px;
+    transform: rotateY(180deg);
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -28px -2px;
+    transform: rotateY(0deg);
+  }
+
+  52.5% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -358px -2px;
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -28px -2px;
+    transform: rotateY(0deg);
+  }
+
+  72.5% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -358px -2px;
+    transform: rotateY(180deg);
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -28px -2px;
+    transform: rotateY(0deg);
+  }
+
+  92.5% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -358px -2px;
+    transform: rotateY(180deg);
+  }
+}
+
+@-webkit-keyframes nextFlip7 {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -2px -2px;
+    transform: rotateY(0deg);
+  }
+
+  13% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -388px -2px;
+    transform: rotateY(180deg);
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -2px -2px;
+    transform: rotateY(0deg);
+  }
+
+  33% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -388px -2px;
+    transform: rotateY(180deg);
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -2px -2px;
+    transform: rotateY(0deg);
+  }
+
+  53% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -388px -2px;
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -2px -2px;
+    transform: rotateY(0deg);
+  }
+
+  73% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -388px -2px;
+    transform: rotateY(180deg);
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -2px -2px;
+    transform: rotateY(0deg);
+  }
+
+  93% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -388px -2px;
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes nextFlip7 {
+  0% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -2px -2px;
+    transform: rotateY(0deg);
+  }
+
+  13% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -388px -2px;
+    transform: rotateY(180deg);
+  }
+
+  20% {
+    background-image: url("https://picsum.photos/420/300?random=2");
+    background-position: -2px -2px;
+    transform: rotateY(0deg);
+  }
+
+  33% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -388px -2px;
+    transform: rotateY(180deg);
+  }
+
+  40% {
+    background-image: url("https://picsum.photos/420/300?random=3");
+    background-position: -2px -2px;
+    transform: rotateY(0deg);
+  }
+
+  53% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -388px -2px;
+    transform: rotateY(180deg);
+  }
+
+  60% {
+    background-image: url("https://picsum.photos/420/300?random=4");
+    background-position: -2px -2px;
+    transform: rotateY(0deg);
+  }
+
+  73% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -388px -2px;
+    transform: rotateY(180deg);
+  }
+
+  80% {
+    background-image: url("https://picsum.photos/420/300?random=5");
+    background-position: -2px -2px;
+    transform: rotateY(0deg);
+  }
+
+  93% {
+    background-image: url("https://picsum.photos/420/300?random=1");
+    background-position: -388px -2px;
+    transform: rotateY(180deg);
+  }
+}
+
+.twitterLink {
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.5em;
+}
+
+.twitterLink img {
+  width: 2em;
+  filter: grayscale(100%);
+  transition: filter 0.25s;
+}
+
+.twitterLink img:hover {
+  filter: grayscale(0%);
+}
+
+
+/*Libros lista*/
+
+
+#lista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*background: #ddd;*/
+  padding: 0%;
+  width: 100%;
+}
+  
+#lista .text-gray{
+    
+    color: #aaa}
+ 
+ #lista h1{
+      margin-top: 10px;
+      color: black}
+     
+    
+
+ 
+/***/
+
+
+.product-content {
+border: 2px solid #dfe5e9;
+margin-bottom: 20px;
+margin-top: 12px;
+background: #fff;
+width: 95%;
+padding: 4px;
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+}
+
+.product-content .carousel-control.left {
+margin-left: 0
+}
+
+.product-content .product-image {
+background-color: #fff;
+display: block;
+overflow: hidden;
+text-align: center;
+}
+
+.product-content .product-deatil {
+border-bottom: 1px solid #dfe5e9;
+padding-bottom: 17px;
+padding-left: 16px;
+padding-top: 16px;
+position: relative;
+background: #fff
+}
+
+.product-content .product-deatil h5 a {
+color: #2f383d;
+font-size: 15px;
+line-height: 19px;
+text-decoration: none;
+padding-left: 0;
+margin-left: 0
+}
+
+.product-content .product-deatil h5 a span {
+color: #9aa7af;
+display: block;
+font-size: 13px
+}
+
+.product-content .product-deatil span.tag1 {
+border-radius: 50%;
+color: #fff;
+font-size: 15px;
+height: 50px;
+padding: 13px 0;
+position: absolute;
+right: 10px;
+text-align: center;
+top: 10px;
+width: 50px
+}
+
+.product-content .product-deatil span.sale {
+background-color: #21c2f8
+}
+
+.product-content .product-deatil span.discount {
+background-color: #71e134
+}
+
+.product-content .product-deatil span.hot {
+background-color: #fa9442
+}
+
+.product-content .description {
+font-size: 12.5px;
+line-height: 20px;
+padding: 10px 14px 16px 19px;
+background: #fff
+}
+
+.product-content .product-info {
+padding: 11px 19px 10px 20px
+}
+
+.product-content .product-info a.add-to-cart {
+color: #2f383d;
+font-size: 13px;
+padding-left: 16px
+}
+
+.product-content name.a {
+padding: 5px 10px;
+margin-left: 16px
+}
+
+.product-info.smart-form .btn {
+padding: 6px 12px;
+margin-left: 12px;
+margin-top: -10px
+}
+
+.product-entry .product-deatil {
+border-bottom: 1px solid #dfe5e9;
+padding-bottom: 17px;
+padding-left: 16px;
+padding-top: 16px;
+position: relative
+}
+
+.product-entry .product-deatil h5 a {
+color: #2f383d;
+font-size: 15px;
+line-height: 19px;
+text-decoration: none
+}
+
+.product-entry .product-deatil h5 a span {
+color: #9aa7af;
+display: block;
+font-size: 13px
+}
+
+.load-more-btn {
+background-color: #21c2f8;
+border-bottom: 2px solid #037ca5;
+border-radius: 2px;
+border-top: 2px solid #0cf;
+margin-top: 20px;
+padding: 9px 0;
+width: 100%
+}
+
+.product-block .product-deatil p.price-container span,
+.product-content .product-deatil p.price-container span,
+.product-entry .product-deatil p.price-container span,
+.shipping table tbody tr td p.price-container span,
+.shopping-items table tbody tr td p.price-container span {
+color: #21c2f8;
+font-family: Lato, sans-serif;
+font-size: 24px;
+line-height: 20px
+}
+
+.product-info.smart-form .rating label {
+margin-top: 0
+}
+
+.product-wrap .product-image span.tag2 {
+position: absolute;
+top: 10px;
+right: 10px;
+width: 36px;
+height: 36px;
+border-radius: 50%;
+padding: 10px 0;
+color: #fff;
+font-size: 11px;
+text-align: center
+}
+
+.product-wrap .product-image span.sale {
+background-color: #57889c
+}
+
+.product-wrap .product-image span.hot {
+background-color: #a90329
+}
+
+.shop-btn {
+position: relative
+}
+
+.shop-btn>span {
+background: #a90329;
+display: inline-block;
+font-size: 10px;
+box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
+font-weight: 700;
+border-radius: 50%;
+padding: 2px 4px 3px!important;
+text-align: center;
+line-height: normal;
+width: 19px;
+top: -7px;
+left: -7px;
+}
+
+.description-tabs {
+padding: 30px 0 5px!important
+}
+
+.description-tabs .tab-content {
+padding: 10px 0
+}
+
+.product-deatil {
+padding: 30px 30px 50px
+}
+
+.product-deatil hr+.description-tabs {
+padding: 0 0 5px!important
+}
+
+.product-deatil .carousel-control.left,
+.product-deatil .carousel-control.right {
+background: none!important
+}
+
+.product-deatil .glyphicon {
+color: #3276b1
+}
+
+.product-deatil .product-image {
+border-right: 0px solid #fff !important
+}
+
+.product-deatil .name {
+margin-top: 0;
+margin-bottom: 0
+}
+
+.product-deatil .name small {
+display: block
+}
+
+.product-deatil .name a {
+margin-left: 0
+}
+
+.product-deatil .price-container {
+font-size: 24px;
+margin: 0;
+font-weight: 300
+}
+
+.product-deatil .price-container small {
+font-size: 12px
+}
+
+.product-deatil .fa-2x {
+font-size: 16px!important
+}
+
+.product-deatil .fa-2x>h5 {
+font-size: 12px;
+margin: 0
+}
+
+.product-deatil .fa-2x+a,
+.product-deatil .fa-2x+a+a {
+font-size: 13px
+}
+
+.product-deatil .certified {
+margin-top: 10px
+}
+
+.product-deatil .certified ul {
+padding-left: 0
+}
+
+.product-deatil .certified ul li:not(first-child) {
+margin-left: -3px
+}
+
+.product-deatil .certified ul li {
+display: inline-block;
+background-color: #f9f9f9;
+padding: 13px 19px
+}
+
+.product-deatil .certified ul li:first-child {
+border-right: none
+}
+
+.product-deatil .certified ul li a {
+text-align: left;
+font-size: 12px;
+color: #6d7a83;
+line-height: 16px;
+text-decoration: none
+}
+
+.product-deatil .certified ul li a span {
+display: block;
+color: #21c2f8;
+font-size: 13px;
+font-weight: 700;
+text-align: center
+}
+
+.product-deatil .message-text {
+width: calc(100% - 70px)
+}
+
+@media only screen and (min-width:1024px) {
+.product-content div[class*=col-md-4] {
+    padding-right: 0
+}
+.product-content div[class*=col-md-8] {
+    padding: 0 13px 0 0
+}
+.product-wrap div[class*=col-md-5] {
+    padding-right: 0
+}
+.product-wrap div[class*=col-md-7] {
+    padding: 0 13px 0 0
+}
+.product-content .product-image {
+    border-right: 1px solid #dfe5e9
+}
+.product-content .product-info {
+    position: relative
+}
+}

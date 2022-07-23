@@ -22,6 +22,22 @@ import { OfertasComponent } from './ofertas/ofertas.component';
 import { AgregarOfertaComponent } from './agregar-oferta/agregar-oferta.component';
 import {MatTableModule} from '@angular/material/table';
 
+import { ModificarOfertaComponent } from './modificar-oferta/modificar-oferta.component';
+import { LoginService } from './services/login.service';
+
+import { CarritoComponent } from './VentaLibro/carrito/carrito.component';
+import { PagoComponent } from './VentaLibro/pago/pago.component';
+
+import { AgregarLibroComponent } from './agregar-libro/agregar-libro.component';
+import { LibroComponent } from './libro/libro.component';
+import { ModificarLibroComponent } from './modificar-libro/modificar-libro.component';
+import { AutorComponent } from './autor/autor.component';
+import { AutorInterface } from './Interfaces/AutorInterface';
+import { AgregarAutorComponent } from './agregar-autor/agregar-autor.component';
+import { ModificarAutorComponent } from './modificar-autor/modificar-autor.component';
+import { ServiciosService } from './ServicioAutor/servicios.service';
+
+
 
 
 @NgModule({
@@ -32,7 +48,21 @@ import {MatTableModule} from '@angular/material/table';
     FooterComponent,
     LoginComponent,
     OfertasComponent,
-    AgregarOfertaComponent
+    AgregarOfertaComponent,
+    ModificarOfertaComponent,
+
+    CarritoComponent,
+    PagoComponent,
+
+    AgregarLibroComponent,
+    LibroComponent,
+    ModificarLibroComponent,
+    AutorComponent,
+    AgregarAutorComponent,
+    ModificarAutorComponent,
+    
+  
+
 
   ],
   imports: [
@@ -42,7 +72,7 @@ import {MatTableModule} from '@angular/material/table';
 
   ],
   entryComponents: [LoginComponent],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
