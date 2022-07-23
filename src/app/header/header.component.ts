@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { LoginService } from '../services/login.service';
 
@@ -14,7 +15,7 @@ export class HeaderComponent implements OnInit {
   username!:string;
   logged!:boolean;
 
-  constructor(private dialog:MatDialog,  private loginService: LoginService) { }
+  constructor(private router: Router,private dialog:MatDialog,  private loginService: LoginService) { }
 
   openDialogSesion(){
     this.dialog.open(LoginComponent)
@@ -24,4 +25,12 @@ export class HeaderComponent implements OnInit {
     this.loginService.getUsername.subscribe(username => this.username = username);
     this.loginService.getLogged.subscribe(logged => this.logged = logged);
   }
+
+  oferta(){
+
+    this.router.navigate(['/oferta']);
+  
+  }
+
+  
 }

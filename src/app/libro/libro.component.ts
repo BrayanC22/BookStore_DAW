@@ -43,15 +43,6 @@ export class LibroComponent implements OnInit {
 
   }
 
-  
-
-
-oferta(){
-
-  this.router.navigate(['/libro']);
-
-}
-
 
 }
 

@@ -30,7 +30,7 @@ export class OfertasComponent implements OnInit {
   dataSource = new MatTableDataSource<any>;
   
 
-  constructor(public dialog:MatDialog, private ofertaServicio:ServiciosService) { 
+  constructor(private router: Router,public dialog:MatDialog, private ofertaServicio:ServiciosService) { 
     
   };
 
@@ -51,7 +51,6 @@ export class OfertasComponent implements OnInit {
   openDialogModificar(Oferta:any){
     //Agregar los parámetros a una lista para enviarlos al componente de modificar.
     this.dialog.open(ModificarOfertaComponent, {data:Oferta, width: '50%'})
-
   }
   
 }
