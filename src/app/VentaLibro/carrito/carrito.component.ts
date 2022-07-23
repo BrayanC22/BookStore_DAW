@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
@@ -7,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarritoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  ComprarLibro(){
+    alert("Se ha realizado la compra, muchas gracias");
+  }
+
+  SeguirComprando(){
+    this.router.navigate(['/libro']);
+  }
+
 
 }
 
