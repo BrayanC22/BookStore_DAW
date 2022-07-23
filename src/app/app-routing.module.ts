@@ -11,6 +11,9 @@ import { CarritoComponent } from './VentaLibro/carrito/carrito.component';
 import { AgregarLibroComponent } from './agregar-libro/agregar-libro.component';
 import { ModificarLibroComponent } from './modificar-libro/modificar-libro.component';
 
+import { AutorComponent } from './autor/autor.component';
+import { ModificarAutorComponent } from './modificar-autor/modificar-autor.component';
+
 
 const routes: Routes = [
   {path:'',component:PagePrincipalComponent},
@@ -18,11 +21,11 @@ const routes: Routes = [
   {path:'libro',component:LibroComponent},
   {path:'oferta',component:OfertasComponent},
   {path:'sesion', component:LoginComponent},
-
   {path:'ModificarOferta', component:ModificarOfertaComponent},
   {path:'carrito', component:CarritoComponent}, 
-
-  {path:'ModificarLibro', component:ModificarLibroComponent}
+  {path:'ModificarLibro', component:ModificarLibroComponent},
+  {path:'autor',component:AutorComponent},
+  {path:'ModificarAutor',component:ModificarAutorComponent}
 
 
 ];

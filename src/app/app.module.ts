@@ -31,8 +31,11 @@ import { PagoComponent } from './VentaLibro/pago/pago.component';
 import { AgregarLibroComponent } from './agregar-libro/agregar-libro.component';
 import { LibroComponent } from './libro/libro.component';
 import { ModificarLibroComponent } from './modificar-libro/modificar-libro.component';
-
-
+import { AutorComponent } from './autor/autor.component';
+import { AutorInterface } from './Interfaces/AutorInterface';
+import { AgregarAutorComponent } from './agregar-autor/agregar-autor.component';
+import { ModificarAutorComponent } from './modificar-autor/modificar-autor.component';
+import { ServiciosService } from './ServicioAutor/servicios.service';
 
 
 
@@ -54,6 +57,10 @@ import { ModificarLibroComponent } from './modificar-libro/modificar-libro.compo
     AgregarLibroComponent,
     LibroComponent,
     ModificarLibroComponent,
+    AutorComponent,
+    AgregarAutorComponent,
+    ModificarAutorComponent,
+    
   
 
 
