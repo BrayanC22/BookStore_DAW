@@ -25,12 +25,5 @@ export class HeaderComponent implements OnInit {
     //this.loginService.getUsername.subscribe(username => this.username = username);
     //this.loginService.getLogged.subscribe(logged => this.logged = logged);
   }
-
-  oferta(){
-
-    this.router.navigate(['/oferta']);
-  
-  }
-
   
 }

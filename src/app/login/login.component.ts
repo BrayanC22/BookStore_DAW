@@ -27,14 +27,16 @@ export class LoginComponent {
 
   onSubmit(){
     this.usuarioTemp = this.usuarioLogin.value.nombreUsuario;
+    alert(this.usuarioTemp);
     
     this.loginService.login(this.usuarioLogin.value as credenciales).subscribe((data:any)=>{
       console.log(data);
       localStorage.setItem('NombreUsuario',this.usuarioTemp);
       localStorage.setItem('token_value',data);
-      this.router.navigate(['/Oferta']);
+      this.router.navigate(['/oferta']);
       this.dialogRef.close();
     },
     (errorData)=> alert(errorData.console.error))
     }
+    
   }
