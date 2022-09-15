@@ -24,7 +24,7 @@ export class OfertasComponent implements OnInit {
   }
 
   //Arreglo de datos
-  listaOferta: any 
+  listaOferta: any =[];
   //Arreglo que ayuda a definir las columnas que van a aparecer en la tabla
   displayedColumns: string[] = ['idOfertas','temporada', 'descuento','descripcion']
   
@@ -40,19 +40,15 @@ export class OfertasComponent implements OnInit {
      this.dataSource=new MatTableDataSource(this.listaOferta);
     
   }
- cargarofertas(){
 
+ cargarofertas(){
+  
   this.service.getOfertas().subscribe((data : any) =>{
     this.listaOferta = data;
     alert(data);
   },
-  (errorData) => {
-    alert(errorData);    
-  }
-  );
-
-
-  
+  (errorData) => (alert("Usuario no autorizado!"),
+  this.router.navigate(['/'])));
  }
 
 

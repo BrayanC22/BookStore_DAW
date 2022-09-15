@@ -14,7 +14,7 @@ export class BookStoreService {
     let auth_Token = localStorage.getItem('token_value');
     const header = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'bearer ' +auth_Token
+      'Authorization': `bearer ${auth_Token}`
     })
     return this.http.get(this.urlhost + this.urlApi,{headers: header});
   }
