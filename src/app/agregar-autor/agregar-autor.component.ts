@@ -27,7 +27,7 @@ export class AgregarAutorComponent implements OnInit {
   }
 
   
-  
+  /*
   onSubmit()
   {
     const autor: AutorInterface = {
@@ -42,7 +42,7 @@ export class AgregarAutorComponent implements OnInit {
     .then(()=>this.router.navigate(['/autor'],{state:{editarDatos: this.servicioAutor.agregarAutor(autor)}}))
     this.dialogRef.close();
   }
-
+*/
   cancelar()
   {
     this.dialogRef.close(); 

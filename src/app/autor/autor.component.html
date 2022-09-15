@@ -181,62 +181,36 @@
     
     </div>
     
-    <!--  
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">idAutor</th>
+          <th scope="col">nombreAutor</th>
+          <th scope="col">biografia</th>
+          <th scope="col">twitter</th>
+          <th scope="col">instagram</th>
+          <th scope="col">fotoAutor</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <div>
+          <div *ngFor="let oferta of listaAutor">
+            <tr>
+              <th>{{oferta.idAutor}}</th>
+              <td>{{oferta.nombreAutor}}</td>
+              <td>{{oferta.biografia}}</td>
+              <td>{{oferta.twitter}}</td>
+              <td>{{oferta.instagram}}</td>
+              <td>{{oferta.fotoAutor}}</td>
+            </tr>
     
-    <br>
-    <button mat-raised-button color="accent" (click)="openDialogAgregar()"> Agregar</button>
-    <br><br>
-    <mat-form-field appearance="standard">
-        <mat-label>Buscar</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ingrese información" #input>
-      </mat-form-field>
-      
+          </div>
     
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table table-hover">
-      
-     }
-    
-    
-      <ng-container matColumnDef="Nombre">
-        <th mat-header-cell *matHeaderCellDef> Nombre </th>
-        <td mat-cell *matCellDef="let element"> {{element.Nombre}} </td>
-      </ng-container>
-    
-    }
-      <ng-container matColumnDef="Biografia">
-        <th mat-header-cell *matHeaderCellDef> Biografia </th>
-        <td mat-cell *matCellDef="let element"> {{element.Biografia}} </td>
-      </ng-container>
-    }
-      <ng-container matColumnDef="Telefono">
-        <th mat-header-cell *matHeaderCellDef> Telefono </th>
-        <td mat-cell *matCellDef="let element"> {{element.Telefono}} </td>
-      </ng-container>
-    
-    }
-      <ng-container matColumnDef="Foto">
-        <th mat-header-cell *matHeaderCellDef> Foto </th>
-        <td mat-cell *matCellDef="let element"> {{element.Foto}} </td>
-      </ng-container>
-    
-     
-        <ng-container matColumnDef="Modificar">
-          <th mat-header-cell *matHeaderCellDef> Opciones </th>
-          <td mat-cell *matCellDef="let element"><button mat-raised-button color="accent" (click)="openDialogModificar(element)">Modificar</button></td>
-        </ng-container>        
-    
+        </div>
         
-        
-    
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    
-      
-      <tr class="mat-row" *matNoDataRow>
-        <td class="mat-cell" colspan="4">Asegurese que la información solicitada exista"{{input.value}}"</td>
-      </tr>
-      
+      </tbody>
     </table>
     
-    -->
     
