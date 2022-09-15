@@ -54,18 +54,7 @@ export class ModificarOfertaComponent implements OnInit {
    */
   
   //Esto sirve para la modificación
-  onSubmit(){
-    const oferta: OfertaInterface = {
-      Temporada: this.formOferta.value.Temporada,
-      Categorias: this.formOferta.value.Categorias,
-      Precio: this.formOferta.value.Precio,
-      Descuento: this.formOferta.value.Descuento,
-      Descripcion: this.formOferta.value.Descripcion
-    }
-    this.router.navigate(['/'])
-    .then(()=>this.router.navigate(['/oferta'],{state:{editarDatos: this.ofertaServicio.ModificarOferta(oferta)}}))
-    this.cancelar();
-  }
+ 
 
   
   cancelar(){

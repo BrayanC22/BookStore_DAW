@@ -31,25 +31,6 @@ export class AgregarOfertaComponent implements OnInit {
   //navigationExtras: NavigationExtras={};
 
   
-  onSubmit()
-  {
-    const oferta: OfertaInterface = {
-      Temporada: this.formOferta.value.Temporada,
-      Categorias: this.formOferta.value.Categorias,
-      Precio: this.formOferta.value.Precio,
-      Descuento: this.formOferta.value.Descuento,
-      Descripcion: this.formOferta.value.Descripcion
-      
-    }
-    this.router.navigate(['/'])
-    .then(()=>this.router.navigate(['/oferta'],{state:{editarDatos: this.servicioOferta.agregarOferta(oferta)}}))
-    this.dialogRef.close();
-  }
-
-  cancelar()
-  {
-    this.dialogRef.close(); 
-  }
-
+  
 
 }

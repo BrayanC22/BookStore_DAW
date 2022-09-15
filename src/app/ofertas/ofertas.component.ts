@@ -5,6 +5,7 @@ import { ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 import { AgregarOfertaComponent } from '../agregar-oferta/agregar-oferta.component';
 import { OfertaInterface } from '../Interfaces/OfertaInterface';
 import { ModificarOfertaComponent } from '../modificar-oferta/modificar-oferta.component';
+import { BookStoreService } from '../services/book-store.service';
 import { ServiciosService } from '../ServiciOferta/servicios.service';
 
 
@@ -23,22 +24,37 @@ export class OfertasComponent implements OnInit {
   }
 
   //Arreglo de datos
-  listaOferta: OfertaInterface[] = []
+  listaOferta: any 
   //Arreglo que ayuda a definir las columnas que van a aparecer en la tabla
-  displayedColumns: string[] = ['Temporada','Categorias', 'Precio','Descuento','Descripcion', "Modificar"]
+  displayedColumns: string[] = ['idOfertas','temporada', 'descuento','descripcion']
   
   dataSource = new MatTableDataSource<any>;
   
 
-  constructor(private router: Router,public dialog:MatDialog, private ofertaServicio:ServiciosService) { 
+  constructor(private router: Router,public dialog:MatDialog, private ofertaServicio:ServiciosService,private service : BookStoreService) { 
     
   };
 
   ngOnInit(): void {
-    this.listaOferta = this.ofertaServicio.getOferta();
-    this.dataSource=new MatTableDataSource(this.listaOferta);
+    this.cargarofertas();
+     this.dataSource=new MatTableDataSource(this.listaOferta);
     
   }
+ cargarofertas(){
+
+  this.service.getOfertas().subscribe((data : any) =>{
+    this.listaOferta = data;
+    alert(data);
+  },
+  (errorData) => {
+    alert(errorData);    
+  }
+  );
+
+
+  
+ }
+
 
   openDialogAgregar(){
     this.dialog.open(AgregarOfertaComponent, {

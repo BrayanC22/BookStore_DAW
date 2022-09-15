@@ -36,7 +36,7 @@ import { AutorInterface } from './Interfaces/AutorInterface';
 import { AgregarAutorComponent } from './agregar-autor/agregar-autor.component';
 import { ModificarAutorComponent } from './modificar-autor/modificar-autor.component';
 import { ServiciosService } from './ServicioAutor/servicios.service';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -68,7 +68,7 @@ import { ServiciosService } from './ServicioAutor/servicios.service';
   imports: [
     BrowserModule,
     AppRoutingModule,MatFormFieldModule,ReactiveFormsModule,MatCardModule,MatInputModule,MatSnackBarModule,MatToolbarModule,MatIconModule,MatDialogModule,MatChipsModule,MatButtonModule,
-    BrowserAnimationsModule,MatTableModule
+    BrowserAnimationsModule,HttpClientModule,MatTableModule
 
   ],
   entryComponents: [LoginComponent],

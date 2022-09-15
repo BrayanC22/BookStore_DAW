@@ -2,9 +2,9 @@
 export interface OfertaInterface {
 
     //Imagen: string;
-    Temporada: string;
-    Categorias: string; //Tipo de oferta.
-    Precio: number;
-    Descuento : number;
-    Descripcion: string;
+    idOfertas:number;
+    temporada : string;
+    descuento: number; //Tipo de oferta.
+    descripcion : string;
+  
 }
