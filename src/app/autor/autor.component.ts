@@ -5,6 +5,7 @@ import { ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 import { AgregarAutorComponent } from '../agregar-autor/agregar-autor.component';
 import { AutorInterface } from '../Interfaces/AutorInterface';
 import { ModificarAutorComponent } from '../modificar-autor/modificar-autor.component';
+import { AutorService } from '../services/autor.service';
 import { ServiciosService } from '../ServicioAutor/servicios.service';
 
 @Component({
@@ -22,24 +23,39 @@ export class AutorComponent implements OnInit {
   }
 
   //Arreglo de datos
-  listaAutor: AutorInterface[] = []
+  listaAutor: any
   //Arreglo que ayuda a definir las columnas que van a aparecer en la tabla
-  displayedColumns: string[] = ['Nombre','Biografia', 'Telefono','Foto', "Modificar"]
+  displayedColumns: string[] = ['idAutor','nombreAutor', 'biografia','twitter','instagram','fotoAutor']
   
   dataSource = new MatTableDataSource<any>;
   
 
-  constructor(public dialog:MatDialog, private AutorServicio:ServiciosService) { 
+  constructor(public dialog:MatDialog, private AutorServicio:ServiciosService, private service : AutorService ) { 
     
   };
 
   ngOnInit(): void {
-    this.listaAutor = this.AutorServicio.getAutor();
-    this.dataSource=new MatTableDataSource(this.listaAutor);
+    this.cargarAutor();
+     this.dataSource=new MatTableDataSource(this.listaAutor);
 
     
     
   }
+
+  cargarAutor(){
+
+    this.service.getAutor().subscribe((data : any) =>{
+      this.listaAutor = data;
+      alert(data);
+    },
+    (errorData) => {
+      alert(errorData);    
+    }
+    );
+  
+  
+    
+   }
 
   openDialogAgregar(){
     this.dialog.open(AgregarAutorComponent, {

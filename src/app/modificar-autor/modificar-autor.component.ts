@@ -40,7 +40,7 @@ export class ModificarAutorComponent implements OnInit {
     
   }
 
-
+/*
   
   //Esto sirve para la modificación
   onSubmit(){
@@ -60,5 +60,5 @@ export class ModificarAutorComponent implements OnInit {
   cancelar(){
     this.dialogRef.close(); 
   }
-
+*/
 }
