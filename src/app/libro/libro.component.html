@@ -275,6 +275,44 @@
   <!-- end product -->
 </div>
 
+<!--Nuevo-->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre del Autor</th>
+      <th scope="col">Titulo de Libro</th>
+      <th scope="col">Temporada</th>
+      <th scope="col">Descuento</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Precio</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <div>
+      <div *ngFor="let Libro of listaLibro">
+        <tr>
+          <th>{{Libro.nombreAutor}}</th>
+          <td>{{Libro.titulo}}</td>
+          <td>{{Libro.temporada}}</td>
+          <td>{{Libro.descuento}}</td>
+          <td>{{Libro.nombre}}</td>
+          <td>{{Libro.precio}}</td>
+
+        </tr>
+
+      </div>
+
+    </div>
+    
+  </tbody>
+</table>
+
+
+
+
+
+
 <!-- Va a oferta -->
 
 <section class="questions__offer">
