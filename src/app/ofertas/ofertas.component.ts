@@ -45,7 +45,6 @@ export class OfertasComponent implements OnInit {
   
   this.service.getOfertas().subscribe((data : any) =>{
     this.listaOferta = data;
-    alert(data);
   },
   (errorData) => (alert("Usuario no autorizado!"),
   this.router.navigate(['/'])));
