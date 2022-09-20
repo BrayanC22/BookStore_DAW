@@ -29,7 +29,7 @@ export class AgregarLibroComponent implements OnInit {
     }
 
 
-    onSubmit()
+   /* onSubmit()
     {
       const libro: LibroInterface = {
         Titulo: this.formLibro.value.Titulo,
@@ -38,13 +38,14 @@ export class AgregarLibroComponent implements OnInit {
         Precio: this.formLibro.value.Precio,
         Descripcion: this.formLibro.value.Descripcion,
         Iva: this.formLibro.value.Iva
+        
       }
       this.router.navigate(['/'])
       .then(()=>this.router.navigate(['/libro'],{state:{editarDatos: this.servicioLibro.agregarLibro(libro)}}))
       this.dialogRef.close();
     }
   
-    cancelar()
+*/   cancelar()
   {
     this.dialogRef.close(); 
   }

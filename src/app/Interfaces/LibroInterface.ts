@@ -1,9 +1,15 @@
-export interface LibroInterface {
+import { AutorInterface } from "./AutorInterface";
+import { OfertaInterface } from "./OfertaInterface";
 
-    Titulo: string;
-    Nombre : string;
-    Categoria :string;
-    Precio: number;
-    Descripcion: string;
-    Iva : number;
+export interface LibroInterface {
+   
+    idLibro : number;
+    idAuto:AutorInterface;
+    titulo:string;
+    idOferta:OfertaInterface;
+    descripcion:string;
+    isbn:string;
+    idCategori:string;
+    precio : number;
 }
+

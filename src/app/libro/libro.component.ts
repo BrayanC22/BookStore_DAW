@@ -32,11 +32,13 @@ export class LibroComponent implements OnInit {
     this.dataSource=new MatTableDataSource(this.listaLibro);
   }
 
+
+  //mostrar todos.
   cargarLibro(){
   
     this.service.getLibro().subscribe((data : any) =>{
       this.listaLibro = data;
-      alert(data);
+      console.log(data);
     },
     (errorData) => (alert("Usuario no autorizado!"),
     this.router.navigate(['/'])));

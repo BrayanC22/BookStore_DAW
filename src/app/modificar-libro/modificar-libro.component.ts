@@ -39,7 +39,7 @@ export class ModificarLibroComponent implements OnInit {
       this.formLibro.controls['Iva'].setValue(this.editarDatos.Iva)
       }
     }
-    onSubmit(){
+   /* onSubmit(){
       const libro: LibroInterface = {
         Titulo: this.formLibro.value.Titulo,
         Nombre: this.formLibro.value.Nombre,
@@ -52,7 +52,7 @@ export class ModificarLibroComponent implements OnInit {
       .then(()=>this.router.navigate(['/libro'],{state:{editarDatos: this.libroServicio.ModificarLibro(libro)}}))
       this.cancelar();
     }
-
+*/
     cancelar(){
       this.dialogRef.close(); 
     }
