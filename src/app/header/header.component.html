@@ -18,9 +18,9 @@
                 <div id="MenuNavegacion" class="collapse navbar-collapse">
                     <ul class="navbar-nav ms-3">
                         
-                        <li *ngIf="logged; else login" class="nav-item"><a class="nav-link text-nowrap" id="username">{{username}}</a></li>
+                        <li *ngIf="logged; else login" class="nav-item"><a class="nav-link text-nowrap" id="username">{{username}}Welcome</a></li>
                             <ng-template #login>
-                                <a class="nav-link text-nowrap"(click)="openDialogSesion()">Iniciar sesión</a>
+                                <a class="nav-link text-nowrap"(click)="openDialogSesion()">Iniciar sesion</a>
                             </ng-template>
                         <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href=" libro">Libros</a></li>
