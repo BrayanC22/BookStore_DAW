@@ -23,18 +23,24 @@ export class ModificarAutorComponent implements OnInit {
 
   ngOnInit(): void {
     this.formAutor = this.formBuilder.group({
-      Nombre: ['',Validators.required],
-      Biografia: ['',Validators.required],
-      Telefono: ['', Validators.required],
-      Foto: ['', Validators.required],
-     
+
+      NombreAutor:  ['',Validators.required],
+      Biografia:  ['',Validators.required],
+      Twitter:  ['', Validators.required],
+      Instagram:  ['', Validators.required],
+      FotoAutor:  ['', Validators.required]
+      
       });
 
       if(this.editarDatos){
-      this.formAutor.controls['Nombre'].setValue(this.editarDatos.Nombre),
+      this.formAutor.controls['NombreAutor'].setValue(this.editarDatos.NombreAutor),
       this.formAutor.controls['Biografia'].setValue(this.editarDatos.Biografia),
-      this.formAutor.controls['Telefono'].setValue(this.editarDatos.Telefono),
-      this.formAutor.controls['Foto'].setValue(this.editarDatos.Foto)
+      this.formAutor.controls['Twitter'].setValue(this.editarDatos.Twitter),
+      this.formAutor.controls['Instagram'].setValue(this.editarDatos.Instagram),
+      this.formAutor.controls['FotoAutor'].setValue(this.editarDatos.FotoAutor)
+ 
+
+
      
       }
     

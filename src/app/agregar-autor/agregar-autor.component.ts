@@ -19,10 +19,11 @@ export class AgregarAutorComponent implements OnInit {
 
   ngOnInit(): void {
     this.formAutor = new FormGroup({
-      Nombre: new FormControl('',Validators.required),
+      NombreAutor: new FormControl('',Validators.required),
       Biografia: new FormControl('',Validators.required),
-      Telefono: new FormControl('', Validators.required),
-      Foto: new FormControl('', Validators.required),
+      Twitter: new FormControl('', Validators.required),
+      Instagram: new FormControl('', Validators.required),
+      FotoAutor: new FormControl('', Validators.required),
     })
   }
 
