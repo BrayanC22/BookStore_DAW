@@ -3,7 +3,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NavigationExtras, Router } from '@angular/router';
 import { OfertaInterface } from '../Interfaces/OfertaInterface';
-import { ServiciosService } from '../ServiciOferta/servicios.service';
 
 @Component({
   selector: 'app-agregar-oferta',
@@ -15,8 +14,7 @@ export class AgregarOfertaComponent implements OnInit {
 
   formOferta! : FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private dialogRef: MatDialogRef<AgregarOfertaComponent>,
-    private servicioOferta: ServiciosService,@Inject(MAT_DIALOG_DATA) public editarDatos: any,) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private dialogRef: MatDialogRef<AgregarOfertaComponent>,@Inject(MAT_DIALOG_DATA) public editarDatos: any,) { }
 
   ngOnInit(): void {
     this.formOferta = new FormGroup({

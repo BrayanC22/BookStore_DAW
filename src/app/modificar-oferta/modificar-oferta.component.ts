@@ -3,7 +3,6 @@ import { FormControl, FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NavigationExtras, Router } from '@angular/router';
 import { OfertaInterface } from '../Interfaces/OfertaInterface';
-import { ServiciosService } from '../ServiciOferta/servicios.service';
 
 
 @Component({
@@ -16,7 +15,7 @@ export class ModificarOfertaComponent implements OnInit {
   formOferta!: FormGroup;
 
   
-  constructor(private formBuilder: FormBuilder, private ofertaServicio: ServiciosService, private router: Router,  
+  constructor(private formBuilder: FormBuilder, private router: Router,  
     @Inject(MAT_DIALOG_DATA) public editarDatos: any, private dialogRef: MatDialogRef<ModificarOfertaComponent>) {   
 
       

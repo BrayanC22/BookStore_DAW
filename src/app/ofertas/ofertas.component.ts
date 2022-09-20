@@ -6,7 +6,7 @@ import { AgregarOfertaComponent } from '../agregar-oferta/agregar-oferta.compone
 import { OfertaInterface } from '../Interfaces/OfertaInterface';
 import { ModificarOfertaComponent } from '../modificar-oferta/modificar-oferta.component';
 import { BookStoreService } from '../services/book-store.service';
-import { ServiciosService } from '../ServiciOferta/servicios.service';
+import { LibroService } from '../services/libro.service';
 
 
 @Component({
@@ -25,27 +25,44 @@ export class OfertasComponent implements OnInit {
 
   //Arreglo de datos
   listaOferta: any =[];
+  listaLibros: any =[];
   //Arreglo que ayuda a definir las columnas que van a aparecer en la tabla
   displayedColumns: string[] = ['idOfertas','temporada', 'descuento','descripcion']
-  
+  //datos libro
+  displayedColumnsLibro: string[] = ['nombreAutor','titulo', 'isbn', 'temporada','descuento','Nombre', 'precio']
+
   dataSource = new MatTableDataSource<any>;
   
 
-  constructor(private router: Router,public dialog:MatDialog, private ofertaServicio:ServiciosService,private service : BookStoreService) { 
+  constructor(private router: Router,public dialog:MatDialog,private servicios : BookStoreService,private service : LibroService) { 
     
   };
 
   ngOnInit(): void {
-    this.cargarofertas();
+     this.cargarLibrosOfertas();
+
      this.dataSource=new MatTableDataSource(this.listaOferta);
     
   }
 
  cargarofertas(){
   
-  this.service.getOfertas().subscribe((data : any) =>{
+  this.servicios.getOfertas().subscribe((data : any) =>{
     this.listaOferta = data;
     alert(data);
+  },
+  (errorData) => (alert("Usuario no autorizado!"),
+  this.router.navigate(['/'])));
+ }
+
+ 
+ cargarLibrosOfertas(){
+  
+   
+    this.service.getLibro();
+    this.service.getLibroCompletoOferta().subscribe((data : any) =>{
+    this.listaLibros = data;
+    
   },
   (errorData) => (alert("Usuario no autorizado!"),
   this.router.navigate(['/'])));
