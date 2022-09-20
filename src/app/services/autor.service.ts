@@ -11,6 +11,8 @@ export class AutorService {
   private urlApi: string = 'api/Autors';
   constructor(private http: HttpClient) { }  
 
+
+  
   getAutor(){
     let auth_Token = localStorage.getItem('token_value');
     const header = new HttpHeaders({

@@ -81,6 +81,8 @@
 
   <br>
   <button mat-raised-button color="accent" (click)="openDialogAgregar()"> Agregar</button>
+  <button mat-raised-button color="accent" (click)="cargarTodasOfertas()"> Todos</button>
+  
   <br><br>
   <mat-form-field appearance="standard">
     <mat-label>Filter</mat-label>
@@ -101,17 +103,19 @@
           <div class="product-deatil">
             <h5 class="name">
               <a>
-                Titulo: {{oferta.Titulo}}
-                 <span>Categoria: {{oferta.Temporada}}</span>
+                Titulo: {{oferta.titulo}}
+                 <span>Autor: {{oferta.idAuto.nombreAutor}}</span>
+                 <span>Categoria: {{oferta.idCategori.nombre}}</span>
+                 <span>Descuento: %{{oferta.idOferta.descuento}}</span>
               </a>
             </h5>
-            <p class="price-container">
-              <span>$ {{oferta.precio}}</span>
+            <p class="">
+              Precio:<span> ${{oferta.precio}}</span> <br>
             </p>
             <span class="tag1"></span>
           </div>
           <div class="description">
-            <p> {{oferta.descripcion}}</p>
+            <p>{{oferta.descripcion}}</p>
           </div>
           <div class="product-info smart-form">
             <div class="row">

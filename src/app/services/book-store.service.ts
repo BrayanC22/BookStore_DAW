@@ -21,7 +21,7 @@ export class BookStoreService {
       'Content-Type': 'application/json',
       'Authorization': `bearer ${auth_Token}`
     })
-    return this.http.get(this.urlhost + this.urlApi + "BuscarTodosConOfertas/" ,{headers: header});
+    return this.http.get(this.urlhost + "BuscarTodosConOfertas/" ,{headers: header});
   }
 
   

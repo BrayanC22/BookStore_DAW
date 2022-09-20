@@ -1,18 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { MatRow, MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 import { AgregarOfertaComponent } from '../agregar-oferta/agregar-oferta.component';
-import { LibroInterface } from '../Interfaces/LibroInterface';
-import { OfertaInterface } from '../Interfaces/OfertaInterface';
 import { ModificarOfertaComponent } from '../modificar-oferta/modificar-oferta.component';
 import { BookStoreService } from '../services/book-store.service';
 
 
 @Component({
   selector: 'app-ofertas',
-  templateUrl: './ofertas.component.html',
+  templateUrl:'./ofertas.component.html',
   styleUrls: ['./ofertas.component.css']
 })
 export class OfertasComponent implements OnInit {
@@ -26,23 +23,16 @@ export class OfertasComponent implements OnInit {
 
   //Arreglo de datos
   listaOferta: any =[];
-  //Arreglo que ayuda a definir las columnas que van a aparecer en la tabla
-  displayedColumns: string[] = ['idOfertas','temporada', 'descuento','descripcion']
-  //datos libro
-  //displayedColumnsLibro: string[] = ['nombreAutor','titulo', 'isbn', 'temporada','descuento','Nombre', 'precio']
 
-  dataSource = new MatTableDataSource<any>;
-  
 
   constructor(private router: Router,public dialog:MatDialog,private servicios : BookStoreService) { 
     
   };
 
   ngOnInit(): void {
-     this.cargarTodasOfertas();
-     this.cargarOfertasTemporada();
-     this.cargarOfertasCategoria();
-     this.dataSource=new MatTableDataSource(this.listaOferta);
+    this.cargarTodasOfertas();
+    //this.cargarOfertasTemporada();
+    //this.cargarOfertasCategoria();
     
   }
 
@@ -50,14 +40,15 @@ export class OfertasComponent implements OnInit {
  cargarTodasOfertas(){
   
     this.servicios.getOfertas().subscribe((data : any) =>{
-    this.listaOferta = new MatTableDataSource<LibroInterface> (data as LibroInterface[]);
-   // this.listaOferta =data;
-
+    this.listaOferta =data;
+    console.log(data);
     alert(data);
   },
-  (errorData) => (alert("Usuario no autorizado!"),
-   this.router.navigate(['/'])));
- }
+  (errorData) => {
+    alert(errorData);    
+  }
+  );
+}
 
 
   ofertaNuevo = new FormGroup({
@@ -71,13 +62,14 @@ export class OfertasComponent implements OnInit {
       this.temporadaTemp = this.ofertaNuevo.value.temporada;
   
       this.servicios.getOfertasXTemporada(this.temporadaTemp).subscribe((data : any) =>{
-      this.listaOferta = new MatTableDataSource<LibroInterface> (data as LibroInterface[]);
+      this.listaOferta =data;
 
     },
-  (errorData) => (alert("Usuario no autorizado!"),
-  this.router.navigate(['/'])));
- }
-
+    (errorData) => {
+      alert(errorData);    
+    }
+    );
+  }
 
   ofertaNuevo1 = new FormGroup({
   categoria: new FormGroup('',Validators.required)
@@ -90,14 +82,14 @@ export class OfertasComponent implements OnInit {
     this.categoriaTemp = this.ofertaNuevo1.value.categoria;
   
     this.servicios.getOfertasXTemporada(this.categoriaTemp).subscribe((data : any) =>{
-    this.listaOferta = new MatTableDataSource<LibroInterface> (data as LibroInterface[]);
+    this.listaOferta =data;
 
   },
-(errorData) => (alert("Usuario no autorizado!"),
-this.router.navigate(['/'])));
-  
+  (errorData) => {
+    alert(errorData);    
+  }
+  );
 }
-
 
   openDialogAgregar(){
     this.dialog.open(AgregarOfertaComponent, {
