@@ -112,161 +112,44 @@
 
 </table>-->
 <!-- LibroP -->
-<div class="row">
+<div class="row row2" >  
+  <h1 class="display-4 subtit">LIBROS 2022</h1>
 
-  <h1 class="display-4 subtit">Libros 2022</h1>
+<div class="col-xs-12 col-md-6 bootstrap snippets bootdeys" *ngFor="let libro of listaLibro">
+  <!-- product -->
+  <div class="product-content product-wrap clearfix"  >
+    <div class="row">
+      <div class="col-md-5 col-sm-12 col-xs-12">
+        <div class="product-image">
+          <img src="assets/Recursos/Imagenes/librolista11.jpg" alt="60x60" class="img-responsive">
 
-  <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
-    <!-- product -->
-    <div class="product-content product-wrap clearfix">
-      <div class="row">
-        <div class="col-md-5 col-sm-12 col-xs-12">
-          <div class="product-image">
-            <img src="assets/Recursos/Imagenes/oscar (1).jpg" alt="60x60" class="img-responsive">
-
-          </div>
-        </div>
-        <div class="col-md-7 col-sm-12 col-xs-12">
-          <div class="product-deatil">
-            <h5 class="name">
-              <a>
-                Titulo: La Bestia <span>Categoria:Drama</span>
-              </a>
-            </h5>
-            <p class="price-container">
-              <span>$45</span>
-            </p>
-            <span class="tag1"></span>
-          </div>
-          <div class="description">
-            <p>Fue un príncipe joven y apuesto que se convirtió en alguien cruel y egocéntrico antes de que una
-              hechicera lo transformara en una horrible Bestia </p>
-          </div>
-          <div class="product-info smart-form">
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-6">
-                <a href="carrito" class="btn btn-success">Add to cart</a>
-              </div>
-
-            </div>
-          </div>
         </div>
       </div>
-    </div>
-    <!-- end product -->
-  </div>
-  <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
-    <!-- product -->
-    <div class="product-content product-wrap clearfix">
-      <div class="row">
-        <div class="col-md-5 col-sm-12 col-xs-12">
-          <div class="product-image">
-            <img src="assets/Recursos/Imagenes/oscar (2).jpg" alt="60x60" class="img-responsive">
-
-          </div>
+      <div class="col-md-7 col-sm-12 col-xs-12">
+        <div class="product-deatil">
+          <h5 class="name">
+            <a>
+              Titulo: {{libro.titulo}}
+               <span>Autor: {{libro.idAuto.nombreAutor}}</span>
+               <span>Categoria: {{libro.idCategori.nombre}}</span>
+               <span>Isbn:{{libro.isbn}}</span>
+            </a>
+          </h5>
+          <p class="">
+            Precio:<span> ${{libro.precio}}</span> <br>
+          </p>
+          <span class="tag1"></span>
         </div>
-        <div class="col-md-7 col-sm-12 col-xs-12">
-          <div class="product-deatil">
-            <h5 class="name">
-              <a>
-                Titulo: La chica de Nieve <span>Categoria:Drama</span>
-              </a>
-            </h5>
-            <p class="price-container">
-              <span>$100</span>
-            </p>
-            <span class="tag1"></span>
-          </div>
-          <div class="description">
-            <p>La desaparición de Kiera, de tres años, se convierte en un enigma sin precedentes, y la diferencia aquí,
-              es en la fuerza emocional que tiene la historia. </p>
-          </div>
-          <div class="product-info smart-form">
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-6">
-                <a href="carrito" class="btn btn-success">Add to cart</a>
-              </div>
-
+        <div class="description">
+          <p>{{libro.descripcion}}</p>
+        </div>
+        <div class="product-info smart-form">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+              <a href=" carrito" class="btn btn-success">Add to cart</a>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end product -->
-  </div>
-  <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
-    <!-- product -->
-    <div class="product-content product-wrap clearfix">
-      <div class="row">
-        <div class="col-md-5 col-sm-12 col-xs-12">
-          <div class="product-image">
-            <img src="assets/Recursos/Imagenes/oscar (3).jpg" alt="60x60" class="img-responsive">
 
-          </div>
-        </div>
-        <div class="col-md-7 col-sm-12 col-xs-12">
-          <div class="product-deatil">
-            <h5 class="name">
-              <a>
-                Titulo: Nunca <span>Categoria:Misterio y suspense</span>
-              </a>
-            </h5>
-            <p class="price-container">
-              <span>$80</span>
-            </p>
-            <span class="tag1"></span>
-          </div>
-          <div class="description">
-            <p>Ken Follett regresa al thriller con una emocionante novela que imagina lo inimaginable: la inminente
-              amenaza de una Tercera Guerra Mundial.</p>
-          </div>
-          <div class="product-info smart-form">
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-6">
-                <a href="carrito" class="btn btn-success">Add to cart</a>
-              </div>
 
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end product -->
-  </div>
-  <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys">
-    <!-- product -->
-    <div class="product-content product-wrap clearfix">
-      <div class="row">
-        <div class="col-md-5 col-sm-12 col-xs-12">
-          <div class="product-image">
-            <img src="assets/Recursos/Imagenes/oscar (4).jpg" alt="160x260" class="img-responsive">
-
-          </div>
-        </div>
-        <div class="col-md-7 col-sm-12 col-xs-12">
-          <div class="product-deatil">
-            <h5 class="name">
-              <a>
-                Titulo: EL LIBRO NEGRO DE LAS HORAS <span>Categoria: Accion y Comedia</span>
-              </a>
-            </h5>
-            <p class="price-container">
-              <span>$50</span>
-            </p>
-            <span class="tag1"></span>
-          </div>
-          <div class="description">
-            <p> Una carrera contrarreloj entre Vitoria y el Madrid de los bibliófilos para trazar el perfil criminal más
-              importante de su vida, uno capaz de modificar el pasado, para siempre.
-            </p>
-          </div>
-          <div class="product-info smart-form">
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-6">
-                <a href="carrito" class="btn btn-success">Add to cart</a>
-              </div>
-
-            </div>
           </div>
         </div>
       </div>
@@ -274,41 +157,7 @@
   </div>
   <!-- end product -->
 </div>
-
-<!--Nuevo-->
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Nombre del Autor</th>
-      <th scope="col">Titulo de Libro</th>
-      <th scope="col">Temporada</th>
-      <th scope="col">Descuento</th>
-      <th scope="col">Categoria</th>
-      <th scope="col">Precio</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <div>
-      <div *ngFor="let Libro of listaLibro">
-        <tr>
-          <th>{{Libro.nombreAutor}}</th>
-          <td>{{Libro.titulo}}</td>
-          <td>{{Libro.temporada}}</td>
-          <td>{{Libro.descuento}}</td>
-          <td>{{Libro.nombre}}</td>
-          <td>{{Libro.precio}}</td>
-
-        </tr>
-
-      </div>
-
-    </div>
-    
-  </tbody>
-</table>
-
-
+</div>
 
 
 
