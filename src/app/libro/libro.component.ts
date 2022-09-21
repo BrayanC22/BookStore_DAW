@@ -17,19 +17,18 @@ export class LibroComponent implements OnInit {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.listaLibro.filter = filterValue.trim().toLowerCase();
   }
 
   listaLibro: any =[];
   //Arreglo que ayuda a definir las columnas que van a aparecer en la tabla
-  displayedColumns: string[] = ['nombreAutor','titulo','temporada', 'descuento','nombre', 'precio']
+
   
-  dataSource = new MatTableDataSource<any>;
-  constructor(private router: Router,public dialog:MatDialog, private LibroServicio:ServiciosService,private service : LibroService ) { };
+  constructor(private router: Router,public dialog:MatDialog,private service : LibroService ) { };
 
   ngOnInit(): void {
     this.cargarLibro();
-    this.dataSource=new MatTableDataSource(this.listaLibro);
+  
   }
 
 
@@ -39,9 +38,12 @@ export class LibroComponent implements OnInit {
     this.service.getLibro().subscribe((data : any) =>{
       this.listaLibro = data;
       console.log(data);
+      alert(data);
     },
-    (errorData) => (alert("Usuario no autorizado!"),
-    this.router.navigate(['/'])));
+    (errorData) => {
+      alert(errorData);    
+    }
+    );
    }
  
  

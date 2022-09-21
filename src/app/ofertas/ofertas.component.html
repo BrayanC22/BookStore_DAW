@@ -20,7 +20,7 @@
 </div>
 
 <div class="py-5">
-  <h3 class="font-weight-bold mb-0" id="TiposOfertas">TIPOS DE OFERTAS</h3>
+  <h3 class="font-weight-bold mb-0" id="TiposOfertas">CONOCE DE NUESTRAS OFERTAS FIJAS EN NUESTROS PRODUCTOS</h3>
 
   <div class="row row2">
     <!-- DEMO 4 Item-->
@@ -75,61 +75,159 @@
 </div>
 
 
-<div class="row row2" >
+<div class="row row2">
 
   <h1 class="display-4 subtit">LIBROS EN OFERTAS</h1>
 
   <br>
-  <button mat-raised-button color="accent" (click)="openDialogAgregar()"> Agregar</button>
-  <button mat-raised-button color="accent" (click)="cargarTodasOfertas()"> Todos</button>
-  
   <br><br>
+  <!--
+   
   <mat-form-field appearance="standard">
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ingrese información" #input>
   </mat-form-field>
   
-  <div class="col-xs-12 col-md-6 bootstrap snippets bootdeys" *ngFor="let oferta of listaOferta">
-    <!-- product -->
-    <div class="product-content product-wrap clearfix"  >
-      <div class="row">
-        <div class="col-md-5 col-sm-12 col-xs-12">
-          <div class="product-image">
-            <img src="assets/Recursos/Imagenes/librolista11.jpg" alt="60x60" class="img-responsive">
+ -->
 
-          </div>
+  <form [formGroup]="ofertaNuevo">
+    <mat-form-field class="campos-field">
+      <input matInput placeholder="Ingrese la temporada o la categoria" formControlName="busqueda">
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" (click)="cargarTodasOfertas()"> Todas las ofertas</button>
+    <button mat-raised-button [disabled]="!ofertaNuevo.valid" color="accent" (click)="cargarOfertasCategoria()"> Buscar
+      por Categoria</button>
+    <button mat-raised-button [disabled]="!ofertaNuevo.valid" color="accent" (click)="cargarOfertasTemporada()"> Buscar
+      por Temporada</button>
+
+  </form>
+</div>
+
+
+<div>
+  <br>
+  <br>
+  <h1 class="display-4 subtit">LIBROS DE FICCION EN OFERTA</h1>
+  <br>
+  <div id="nuevoform" onsubmit="cargarTodasFiccion()">
+
+    <div class="hero-container">
+      <div class="main-container" *ngFor="let oferta of listaOferta">
+        <div class="poster-container">
+          <a href="#"><img src={{oferta.portada}} height="280" width="230" class="poster" /></a>
         </div>
-        <div class="col-md-7 col-sm-12 col-xs-12">
-          <div class="product-deatil">
-            <h5 class="name">
-              <a>
-                Titulo: {{oferta.titulo}}
-                 <span>Autor: {{oferta.idAuto.nombreAutor}}</span>
-                 <span>Categoria: {{oferta.idCategori.nombre}}</span>
-                 <span>Descuento: %{{oferta.idOferta.descuento}}</span>
-              </a>
-            </h5>
-            <p class="">
-              Precio:<span> ${{oferta.precio}}</span> <br>
-            </p>
-            <span class="tag1"></span>
-          </div>
-          <div class="description">
-            <p>{{oferta.descripcion}}</p>
-          </div>
-          <div class="product-info smart-form">
-            <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-6">
-                <a href=" carrito" class="btn btn-success">Add to cart</a>
-              </div>
-
-
-            </div>
+        <div class="ticket-container">
+          <div class="ticket__content">
+            <h4 class="ticket__movie-title">{{oferta.titulo}}</h4>
+            <span>Autor: {{oferta.idAuto.nombreAutor}}</span><br>
+            <span>Categoria: {{oferta.idCategori.nombre}}</span><br>
+            <span>Temporada: {{oferta.idOferta.temporada}}</span><br>
+            <p class="ticket__old-price">% {{oferta.idOferta.descuento}}</p>
+            <p class="ticket__current-price">$ {{oferta.precio}}</p>
+            <button href="carrito" class="ticket__buy-btn">Add to cart</button>
           </div>
         </div>
       </div>
-    </div>
-    <!-- end product -->
-  </div>
 
-  
+    </div>
+  </div>
+</div>
+
+<div>
+  <br>
+  <br>
+  <h1 class="display-4 subtit">LIBROS DE MISTERIO EN OFERTA</h1>
+  <br>
+  <div id="nuevoform" onsubmit="cargarTodasMisterio()">
+
+    <div class="hero-container">
+      <div class="main-container" *ngFor="let oferta of listaOferta">
+        <div class="poster-container">
+          <a href="#"><img src={{oferta.portada}} height="280" width="230" class="poster" /></a>
+        </div>
+        <div class="ticket-container">
+          <div class="ticket__content">
+            <h4 class="ticket__movie-title">{{oferta.titulo}}</h4>
+            <span>Autor: {{oferta.idAuto.nombreAutor}}</span><br>
+            <span>Categoria: {{oferta.idCategori.nombre}}</span><br>
+            <span>Temporada: {{oferta.idOferta.temporada}}</span><br>
+            <p class="ticket__old-price">% {{oferta.idOferta.descuento}}</p>
+            <p class="ticket__current-price">$ {{oferta.precio}}</p>
+            <button href=" carrito" class="ticket__buy-btn">Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div>
+  <br>
+  <br>
+  <h1 class="display-4 subtit">LIBROS CLASICOS EN OFERTA</h1>
+  <br>
+  <div id="nuevoform" onsubmit="cargarTodasClasico()">
+
+    <div class="hero-container">
+      <div class="main-container" *ngFor="let oferta of listaOferta">
+        <div class="poster-container">
+          <a href="#"><img src={{oferta.portada}} height="280" width="230" class="poster" /></a>
+        </div>
+        <div class="ticket-container">
+          <div class="ticket__content">
+            <h4 class="ticket__movie-title">{{oferta.titulo}}</h4>
+            <span>Autor: {{oferta.idAuto.nombreAutor}}</span><br>
+            <span>Categoria: {{oferta.idCategori.nombre}}</span><br>
+            <span>Temporada: {{oferta.idOferta.temporada}}</span><br>
+            <p class="ticket__old-price">% {{oferta.idOferta.descuento}}</p>
+            <p class="ticket__current-price">$ {{oferta.precio}}</p>
+            <button href=" carrito" class="ticket__buy-btn">Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div>
+  <br>
+  <br>
+  <h1 class="display-4 subtit">LIBROS DE FANTASIA EN OFERTA</h1>
+  <br>
+  <div id="nuevoform" onsubmit="cargarTodasFantasia()">
+
+    <div class="hero-container">
+      <div class="main-container" *ngFor="let oferta of listaOferta">
+        <div class="poster-container">
+          <a href="#"><img src={{oferta.portada}} height="280" width="230" class="poster" /></a>
+        </div>
+        <div class="ticket-container">
+          <div class="ticket__content">
+            <h4 class="ticket__movie-title">{{oferta.titulo}}</h4>
+            <span>Autor: {{oferta.idAuto.nombreAutor}}</span><br>
+            <span>Categoria: {{oferta.idCategori.nombre}}</span><br>
+            <span>Temporada: {{oferta.idOferta.temporada}}</span><br>
+            <p class="ticket__old-price">% {{oferta.idOferta.descuento}}</p>
+            <p class="ticket__current-price">$ {{oferta.precio}}</p>
+            <button href=" carrito" class="ticket__buy-btn">Add to cart</button>
+         </div>
+        
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<br>
+
+<!-- end product 
+<button mat-raised-button color="accent" (click)="openDialogAgregar()"> Agregar</button>
+
+-->

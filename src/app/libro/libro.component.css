@@ -1,3 +1,29 @@
+.btn {
+	transform: translateY(0px);
+	transition: 0.3s linear;
+	background: #49C608;
+	border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	color: #eee;
+	padding: 0;
+	margin: 0;
+	
+}
+.btn:hover{transform: translateY(-4px);}
+.row2{
+  width: 99%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  margin: 1%;
+
+}
+
 .subtit{
   text-align: center;
   margin-bottom: 3%;
@@ -13,7 +39,24 @@ font-family:'Times New Roman';
 #accordionFlushExample{
 padding-left:15px;  
 }
-
+#lista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ddd;
+  padding: 0%;
+  width: 100%;
+}
+  
+#lista .text-gray{
+    
+    color: #aaa}
+ 
+ #lista h1{
+      margin-top: 10px;
+      color: black}
+     
+    
 /*Informacion*/
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
@@ -59,6 +102,12 @@ padding-left:15px;
 .content-image {
   width: 100%
 }
+.product-image:hover .info{transform: translateX(0);}
+.info ul li{transition: 0.3s ease;}
+.info ul li:hover{transform: translateX(50px) scale(1.3);}
+
+.product-image:hover img {transition: all 0.3s ease-out;}
+.product-image:hover img {transform: scale(1.2, 1.2);}
 
 img {
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
@@ -1435,129 +1484,106 @@ h3 {
 }
 
 
-/*Libros lista*/
 
-
-#lista {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /*background: #ddd;*/
-  padding: 0%;
-  width: 100%;
-}
-  
-#lista .text-gray{
-    
-    color: #aaa}
- 
- #lista h1{
-      margin-top: 10px;
-      color: black}
-     
-    
-
- 
-/***/
 
 
 .product-content {
-border: 2px solid #dfe5e9;
-margin-bottom: 20px;
-margin-top: 12px;
-background: #fff;
-width: 95%;
-padding: 4px;
-    -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+  border: 2px solid #dfe5e9;
+  margin-bottom: 20px;
+  margin-top: 12px;
+  background: #fff;
+  width: 95%;
+  padding: 4px;
+      -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
 }
 
 .product-content .carousel-control.left {
-margin-left: 0
+  margin-left: 0
 }
 
 .product-content .product-image {
-background-color: #fff;
-display: block;
-overflow: hidden;
-text-align: center;
+  background-color: #fff;
+  display: block;
+  overflow: hidden;
+  text-align: center;
 }
 
 .product-content .product-deatil {
-border-bottom: 1px solid #dfe5e9;
-padding-bottom: 17px;
-padding-left: 16px;
-padding-top: 16px;
-position: relative;
-background: #fff
+  border-bottom: 1px solid #dfe5e9;
+  padding-bottom: 17px;
+  padding-left: 16px;
+  padding-top: 16px;
+  position: relative;
+  background: #fff
 }
 
 .product-content .product-deatil h5 a {
-color: #2f383d;
-font-size: 15px;
-line-height: 19px;
-text-decoration: none;
-padding-left: 0;
-margin-left: 0
+  color: #2f383d;
+  font-size: 15px;
+  line-height: 19px;
+  text-decoration: none;
+  padding-left: 0;
+  margin-left: 0
 }
 
 .product-content .product-deatil h5 a span {
-color: #9aa7af;
-display: block;
-font-size: 13px
+  color: #9aa7af;
+  display: block;
+  font-size: 13px
 }
 
 .product-content .product-deatil span.tag1 {
-border-radius: 50%;
-color: #fff;
-font-size: 15px;
-height: 50px;
-padding: 13px 0;
-position: absolute;
-right: 10px;
-text-align: center;
-top: 10px;
-width: 50px
+  border-radius: 50%;
+  color: #fff;
+  font-size: 15px;
+  height: 50px;
+  padding: 13px 0;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  top: 10px;
+  width: 50px
 }
 
 .product-content .product-deatil span.sale {
-background-color: #21c2f8
+  background-color: #21c2f8
 }
 
 .product-content .product-deatil span.discount {
-background-color: #71e134
+  background-color: #71e134
 }
 
 .product-content .product-deatil span.hot {
-background-color: #fa9442
+  background-color: #fa9442
 }
 
 .product-content .description {
-font-size: 12.5px;
-line-height: 20px;
-padding: 10px 14px 16px 19px;
-background: #fff
+  font-size: 12.5px;
+  line-height: 20px;
+  padding: 10px 14px 16px 19px;
+  background: #fff
 }
 
 .product-content .product-info {
-padding: 11px 19px 10px 20px
+  padding: 11px 19px 10px 20px
 }
 
 .product-content .product-info a.add-to-cart {
-color: #2f383d;
-font-size: 13px;
-padding-left: 16px
+  color: #2f383d;
+  font-size: 13px;
+  padding-left: 16px
 }
 
 .product-content name.a {
-padding: 5px 10px;
-margin-left: 16px
+  padding: 5px 10px;
+  margin-left: 16px
 }
 
 .product-info.smart-form .btn {
-padding: 6px 12px;
-margin-left: 12px;
-margin-top: -10px
+  padding: 6px 12px;
+  margin-left: 12px;
+  margin-top: -10px
 }
 
 .product-entry .product-deatil {

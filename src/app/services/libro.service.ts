@@ -20,7 +20,7 @@ export class LibroService {
       'Content-Type': 'application/json',
       'Authorization': `bearer ${auth_Token}`
     })
-    return this.http.get(this.urlhost + this.urlApi,{headers: header});
+    return this.http.get(this.urlhost + "Buscarsinoferta",{headers: header});
   }
   
   
