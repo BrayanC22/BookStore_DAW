@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { OfertaInterface } from '../Interfaces/OfertaInterface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,6 @@ export class BookStoreService {
   private urlhost: string = environment.endpoint;
   // url para mostrar todos los libros
   private urlApi: string = 'api/Ofertas/';
-
-
 
   constructor(private http: HttpClient) { }
   
@@ -32,7 +31,7 @@ export class BookStoreService {
       'Content-Type': 'application/json',
       'Authorization': `bearer ${auth_Token}`
     })
-    return this.http.get(this.urlhost + this.urlApi + "BuscarLibroXTemporada/" + temporada,{headers: header});
+    return this.http.get(this.urlhost + this.urlApi + temporada + "/BuscarLibroXTemporada" ,{headers: header});
   }
 
 
@@ -43,7 +42,50 @@ export class BookStoreService {
       'Content-Type': 'application/json',
       'Authorization': `bearer ${auth_Token}`
     })
-    return this.http.get(this.urlhost + this.urlApi + "BuscarCategoriaConOfertas/" + categoria,{headers: header});
+    return this.http.get(this.urlhost + this.urlApi +  categoria + "/BuscarCategoriaConOfertas",{headers: header});
   }
+
+  //Metodo para mostrar todos los libros por categoria
+  getOfertasFiccion(){
+    let auth_Token = localStorage.getItem('token_value');
+    const header = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `bearer ${auth_Token}`
+    })
+    return this.http.get(this.urlhost + "BuscarCategFiccion/",{headers: header});
+  }
+
+
+ //Metodo para mostrar todos los libros por categoria
+ getOfertasMisterio(){
+  let auth_Token = localStorage.getItem('token_value');
+  const header = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `bearer ${auth_Token}`
+  })
+  return this.http.get(this.urlhost + "BuscarCategMisterio/" ,{headers: header});
+} 
+
+//Metodo para mostrar todos los libros por categoria
+getOfertasClasico(){
+  let auth_Token = localStorage.getItem('token_value');
+  const header = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `bearer ${auth_Token}`
+  })
+  return this.http.get(this.urlhost + "BuscarCategClasico/" ,{headers: header});
+}
+
+//Metodo para mostrar todos los libros por categoria
+getOfertasFantasia(){
+  let auth_Token = localStorage.getItem('token_value');
+  const header = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `bearer ${auth_Token}`
+  })
+  return this.http.get(this.urlhost + "BuscarCategFantasia/" ,{headers: header});
+}
+  
+
 }
 
