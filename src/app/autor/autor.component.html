@@ -50,12 +50,11 @@
       
       <div class="row people" >
         <div class="col-md-6 col-lg-4 item" *ngFor="let oferta of listaAutor">
-          <div class="box"><img class="rounded-circle" src="https://fivebooks.com/app/uploads/2022/05/john-grisham.jpeg">
+          <div class="box"><img class="rounded-circle" src= {{oferta.fotoAutor}}>
             <h3 class="name">{{oferta.nombreAutor}}</h3>
-            <p class="title">{{oferta.instagram}}</p>
             <p class="description">{{oferta.biografia}} </p>
-            <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i
-                  class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+            <div class="social">
+            <a href={{oferta.twitter}}><i class="fa fa-twitter"></i></a><a href={{oferta.instagram}}><i class="fa fa-instagram"></i></a></div>
           </div>
         </div>
       </div>
