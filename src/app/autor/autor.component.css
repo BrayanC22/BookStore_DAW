@@ -19,109 +19,17 @@ table {
     background-color: white;
   }
   
-    .wrapper {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      justify-content: space-around;
-      
-      
-    
-     
-     
-    }
-  
+
+   /* Autores Destacados */
    
-    
-    .card {
-      width: 280px;
-      height: 360px;
-      border-radius: 15px;
-      padding: 1.5rem;
-      background: white;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      transition: 0.4s ease-out;
-      box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
-      margin-bottom: 50px;
-    
-     margin-right: 60px;
-      
-      
-  
-  
-  
-    }
-    .card:hover {
+ 
+    #box .card:hover {
       transform: translateY(20px);
     }
-    .card:hover:before {
+    #box .card:hover:before {
       opacity: 1;
     }
-    .card:hover .info {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-    .card:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 100%;
-      border-radius: 15px;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 2;
-      transition: 0.5s;
-      opacity: 0;
-    }
-    .card img {
-      width: 100%;
-      height: 100%;
-      -o-object-fit: cover;
-         object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-radius: 15px;
-    }
-    .card .info {
-      position: relative;
-      z-index: 3;
-      color: white;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 0.5s;
-    }
-    .card .info h1 {
-      margin: 0px;
-    }
-    .card .info p {
-      letter-spacing: 1px;
-      font-size: 15px;
-      margin-top: 8px;
-    }
-    .card .info button {
-      padding: 0.6rem;
-      outline: none;
-      border: none;
-      border-radius: 3px;
-      background: white;
-      color: black;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.4s ease;
-    }
-  
-    
-    
-  
-    .card .info button:hover {
-      background: dodgerblue;
-      color: white;
-    }
+ 
   
   
   
@@ -132,7 +40,15 @@ table {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    background-color: #ddd;
+    
+    
+  }
+  .sign2 {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
     
   }
   .sign__word {
@@ -141,54 +57,15 @@ table {
     text-align: center;
     line-height: 1;
     font-weight: bold;
-  
-    
-  
   }
-  .sign2{
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-    background-color: white;
-    padding-bottom: 20px;
-    padding-top: 10px;
-    
-  
-    
-  
-    
+
+  .sign2 .sign__word {
+    font-size: 28px;
+    text-align: center;
+    line-height: 1;
+    font-weight: bold;
   }
   
-  
-  
-  
-  
-  .streamer img {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    max-width: 100%;
-    
-  }
-  
-  .img1{
-    transform: translateY(155px);
-  
-  }
-  
-  .img2{
-  
-    transform: translateX(35px);
-  margin-top: 155px;
-  }
-  
-  .img3{
-  
-    transform: translateX(70px);
-  margin-top: 155px;
-  }
   
   
   
@@ -282,3 +159,97 @@ table {
   display: block;
   margin-top: 5px;
    } 
+
+   /* Autores */
+
+   .team-boxed {
+    color:#313437;
+    background-color: white;
+  }
+  
+  .team-boxed p {
+    color:#7d8285;
+  }
+  
+  .team-boxed h2 {
+    font-weight:bold;
+    margin-bottom:40px;
+    padding-top:40px;
+    color:inherit;
+  }
+  
+  @media (max-width:767px) {
+    .team-boxed h2 {
+      margin-bottom:25px;
+      padding-top:25px;
+      font-size:24px;
+    }
+  }
+  
+  .team-boxed .intro {
+    font-size:16px;
+    max-width:500px;
+    margin:0 auto;
+  }
+  
+  .team-boxed .intro p {
+    margin-bottom:0;
+  }
+  
+  .team-boxed .people {
+    padding:50px 0;
+  }
+  
+  .team-boxed .item {
+    text-align:center;
+  }
+  
+  .team-boxed .item .box {
+    text-align:center;
+    padding:30px;
+    background-color: #F8F9F9 ;
+    margin-bottom:30px;
+  }
+  
+  .team-boxed .item .name {
+    font-weight:bold;
+    margin-top:28px;
+    margin-bottom:8px;
+    color:inherit;
+  }
+  
+  .team-boxed .item .title {
+    text-transform:uppercase;
+    font-weight:bold;
+    color:#d0d0d0;
+    letter-spacing:2px;
+    font-size:13px;
+  }
+  
+  .team-boxed .item .description {
+    font-size:15px;
+    margin-top:15px;
+    margin-bottom:20px;
+  }
+  
+  .team-boxed .item img {
+    max-width:160px;
+  }
+  
+  .team-boxed .social {
+    font-size:18px;
+    color:#a2a8ae;
+  }
+  
+  .team-boxed .social a {
+    color:inherit;
+    margin:0 10px;
+    display:inline-block;
+    opacity:0.7;
+  }
+  
+  .team-boxed .social a:hover {
+    opacity:1;
+  }
+  
+  
