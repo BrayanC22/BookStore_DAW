@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 import { AgregarOfertaComponent } from '../agregar-oferta/agregar-oferta.component';
@@ -33,7 +33,8 @@ export class OfertasComponent implements OnInit {
 
 
   constructor(private router: Router,public dialog:MatDialog,private servicios : BookStoreService) { 
-     };
+  
+  };
 
   ngOnInit(): void {
    //this.cargarTodasOfertas();
@@ -46,7 +47,7 @@ export class OfertasComponent implements OnInit {
   }
 
   ofertaNuevo = new FormGroup({
-    titulo: new FormGroup('',Validators.required),
+    titulo: new FormControl('',Validators.required),
  })
 
 //Cargas todos los libros con ofertas
@@ -65,35 +66,16 @@ export class OfertasComponent implements OnInit {
  temporadaTemp: any;
  cargarOfertasTitulo(){ 
       this.temporadaTemp = this.ofertaNuevo.value.titulo;
-  
       this.servicios.getOfertasXTitulo(this.temporadaTemp).subscribe((data : any) =>{
       
-      this.listaOferta = data;
-      console.log(data);
-      console.log(this.temporadaTemp);
-      alert(this.ofertaNuevo.value.titulo);
+      this.listaOferta=data;
+  alert(data);
 
     },
       (errorData) => (alert("Usuario no autorizado!"),
       this.router.navigate(['/'])));
   }
 
-
-
-  //Metodo para mostrar todos los libros por categoria
-  categoriaTemp: any;
-  cargarOfertasPrecio(){
-    this.categoriaTemp = this.ofertaNuevo.value.titulo;
-  
-    this.servicios.getOfertasXPrecio(this.categoriaTemp).subscribe((data : any) =>{
-    this.listaOferta =data;
-    console.log(data);
-    console.log(this.categoriaTemp);
-    alert(this.categoriaTemp);
-  },
-  (errorData) => (alert("Usuario no autorizado!"),
-      this.router.navigate(['/'])));
-}
 
 
 //Cargas todos los libros con Ficcion
@@ -141,7 +123,13 @@ cargarTodasFantasia(){
     this.router.navigate(['/'])));
 }
 
+cargarTodasCategorias(){
+  this.cargarTodasFiccion();
+  this.cargarTodasMisterio();
+  this.cargarTodasClasico();
+  this.cargarTodasFantasia();
 
+}
 
   openDialogAgregar(){
     this.dialog.open(AgregarOfertaComponent, {
