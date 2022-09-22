@@ -96,3 +96,16 @@
 
   </tbody>
 </table>
+
+
+<form [formGroup]="Enombre">
+  <mat-form-field class="campos-field">
+    <input matInput placeholder="Ingrese la temporada o la categoria" formControlName="nombreAutor">
+  </mat-form-field>
+
+ 
+  <button mat-raised-button [disabled]="!AutorN.valid" color="accent" (click)="cargarAutorNombre()"> Buscar por Nombre</button>
+<!-- flip-card-container   <button mat-raised-button [disabled]="!ofertaNuevo.valid" color="accent" (click)="cargarOfertasPrecio()"> Buscar
+    por Precio</button>
+  -->
+</form>
