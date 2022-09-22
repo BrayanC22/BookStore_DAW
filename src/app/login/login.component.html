@@ -21,7 +21,7 @@
 
 
                                         <h4 class="Nventana">Iniciar sesion</h4>
-                                        <form [formGroup]="usuarioLogin" (ngSubmit)="onSubmit()">
+                                        <form [formGroup]="credenciales" (ngSubmit)="onSubmit()">
                                             <div class="form-group" >
                                                 <input type="text" name="logemail" class="form-style" placeholder="Usuario" id="logemail" autocomplete="off" formControlName="nombreUsuario">
                                                 <i class="input-icon uil uil-at"></i>
@@ -30,7 +30,7 @@
                                                 <input type="password" name="logpass" class="form-style" placeholder="Contraseña" id="logpass" autocomplete="off" formControlName="password">
                                                 <i class="input-icon uil uil-lock-alt"></i>
                                             </div>
-                                            <button class="btn mt-4" mat-raised-button [disabled] = "!usuarioLogin.valid">Ingresar</button>
+                                            <button class="btn mt-4" mat-raised-button [disabled] = "!credenciales.valid">Ingresar</button>
                                         </form>
 
                                         <p class="mb-0 mt-4 text-center"><a href="#0" class="link">¿Ha olvidado su contraseña?</a></p>

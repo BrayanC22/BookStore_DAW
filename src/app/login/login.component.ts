@@ -18,7 +18,7 @@ export class LoginComponent {
   usuarioTemp:any;
   passwordTemp:any;
 
-  usuarioLogin = new FormGroup({
+  credenciales = new FormGroup({
     nombreUsuario: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)
   })
@@ -26,17 +26,17 @@ export class LoginComponent {
   constructor(private router: Router, private dialogRef: MatDialogRef<LoginComponent>, private loginService: LoginService) { }
 
   onSubmit(){
-    this.usuarioTemp = this.usuarioLogin.value.nombreUsuario;
-    alert(this.usuarioTemp);
+    this.usuarioTemp = this.credenciales.value.nombreUsuario;
+    //alert(this.usuarioTemp);
     
-    this.loginService.login(this.usuarioLogin.value as credenciales).subscribe((data:any)=>{
+    this.loginService.login(this.credenciales.value as credenciales).subscribe((data:any)=>{
       console.log(data);
       localStorage.setItem('NombreUsuario',this.usuarioTemp);
       localStorage.setItem('token_value',data);
       this.router.navigate(['/oferta']);
       this.dialogRef.close();
     },
-    (errorData)=> alert(errorData.console.error))
+    (errorData)=> alert("El correo/contraseña son incorrectos."))
     }
     
   }
