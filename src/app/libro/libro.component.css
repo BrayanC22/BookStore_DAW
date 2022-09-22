@@ -1800,3 +1800,373 @@ width: calc(100% - 70px)
     position: relative
 }
 }
+/*NUEVO*/
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+/* default */
+#contedorprincipal2  *,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contenedorclasificados{
+  background: #dddd;
+}
+
+.contenedorclasificado1{
+  background: white;
+
+}
+
+/* body */
+#contedorprincipal2 {
+   padding-right: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  
+  font-family: "Lato", "Segoe Ui", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* .flip-card-container */
+#contedorprincipal2 .flip-card-container {
+  --hue: 150;
+  --primary: hsl(var(--hue), 50%, 50%);
+  --white-1: white;
+  --white-2: white;
+  --dark: hsl(var(--hue), 25%, 10%);
+  --grey: hsl(0, 0%, 50%);
+
+  width: 320px;
+  height: 460px;
+  margin: 40px;
+
+  perspective: 1000px;
+}
+
+/* .flip-card */
+#contedorprincipal2 .flip-card {
+  width: inherit;
+  height: inherit;
+
+  position: relative;
+  transform-style: preserve-3d;
+  transition: .6s .1s;
+}
+
+/* hover and focus-within states */
+#contedorprincipal2 .flip-card-container:hover .flip-card,
+.flip-card-container:focus-within .flip-card {
+  transform: rotateY(180deg);
+}
+
+/* .card-... */
+#contedorprincipal2 .card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+
+  background: var(--dark);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  backface-visibility: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .card-front */
+#contedorprincipal2 .card-front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+/* .card-back */
+#contedorprincipal2 .card-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+/* figure */
+#contedorprincipal2 figure {
+  z-index: -1;
+}
+
+/* figure, .img-bg */
+#contedorprincipal2 figure,
+.img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* img */
+#contedorprincipal2 img {
+  height: 100%;
+  border-radius: 24px;
+}
+
+/* figcaption */
+#contedorprincipal2 figcaption {
+  display: block;
+
+  width: auto;
+  margin-top: 12%;
+  padding: 8px 22px;
+
+  font-weight: bold;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  word-spacing: 6px;
+  text-align: right;
+
+  position: absolute;
+  top: 0;
+  right: 12px;
+
+  color: var(--white-1);
+  background: hsla(var(--hue), 25%, 10%, .5);
+}
+
+/* .img-bg */
+#contedorprincipal2 .img-bg {
+  background: hsla(var(--hue), 25%, 10%, .5);
+}
+
+#contedorprincipal2 .card-front .img-bg {
+  clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+}
+
+#contedorprincipal2 .card-front .img-bg::before {
+  content: "";
+
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(18deg);
+
+  width: 100%;
+  height: 6px;
+  border: 1px solid var(--primary);
+  border-left-color: transparent;
+  border-right-color: transparent;
+
+  transition: .1s;
+}
+
+#contedorprincipal2 .card-back .img-bg {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+}
+
+/* hover state */
+#contedorprincipal2 .flip-card-container:hover .card-front .img-bg::before {
+  width: 6px;
+  border-left-color: var(--primary);
+  border-right-color: var(--primary);
+}
+
+/* ul */
+#contedorprincipal2 ul {
+  padding-top: 50%;
+  margin: 0;
+  width: 65%;
+  height: 100%;
+
+  list-style: none;
+  color: var(--white-1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* li */
+#contedorprincipal2 li {
+  width: 100%;
+  margin-top: 12px;
+  padding-bottom: 12px;
+
+  font-size: 17.5px;
+  text-align: center;
+
+  position: relative;
+}
+
+#contedorprincipal2 li:nth-child(2n) {
+  color: var(--white-2);
+}
+
+#contedorprincipal2 li:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: currentColor;
+  opacity: .2;
+}
+
+/* button */
+#contedorprincipal2 button {
+  font-family: inherit;
+  font-weight: bold;
+  color: var(--white-1);
+
+  letter-spacing: 2px;
+
+  padding: 9px 20px;
+  border: 1px solid var(--grey);
+  border-radius: 1000px;
+  background: transparent;
+  transition: .3s;
+
+  cursor: pointer;
+}
+
+#contedorprincipal2 button:hover,
+button:focus {
+  color: var(--primary);
+  background: hsla(var(--hue), 25%, 10%, .2);
+  border-color: currentColor;
+}
+
+#contedorprincipal2 button:active {
+  transform: translate(2px);
+}
+
+/* .design-container */
+#contedorprincipal2 .design-container {
+  --tr: 90;
+  --op: .5;
+
+  width: 100%;
+  height: 100%;
+
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  pointer-events: none;
+}
+
+/* .design */
+#contedorprincipal2 .design {
+  display: block;
+
+  background: var(--grey);
+  position: absolute;
+
+  opacity: var(--op);
+  transition: .3s;
+}
+
+#contedorprincipal2 .design--1,
+.design--2,
+.design--3,
+.design--4 {
+  width: 1px;
+  height: 100%;
+}
+
+#contedorprincipal2 .design--1,
+.design--2 {
+  top: 0;
+  transform: translateY(calc((var(--tr) - (var(--tr) * 2)) * 1%))
+}
+
+#contedorprincipal2 .design--1 {
+  left: 20%;
+}
+
+#contedorprincipal2 .design--2 {
+  left: 80%;
+}
+
+#contedorprincipal2 .design--3,
+.design--4 {
+  bottom: 0;
+  transform: translateY(calc((var(--tr) + (var(--tr) - var(--tr))) * 1%))
+}
+
+#contedorprincipal2 .design--3 {
+  left: 24%;
+}
+
+#contedorprincipal2 .design--4 {
+  left: 76%;
+}
+
+#contedorprincipal2 .design--5,
+.design--6,
+.design--7,
+.design--8 {
+  width: 100%;
+  height: 1px;
+}
+
+#contedorprincipal2 .design--5,
+.design--6 {
+  left: 0;
+  transform: translateX(calc((var(--tr) - (var(--tr) * 2)) * 1%));
+}
+
+#contedorprincipal2 .design--5 {
+  top: 41%;
+}
+
+#contedorprincipal2 .design--6 {
+  top: 59%;
+}
+
+#contedorprincipal2 .design--7,
+.design--8 {
+  right: 0;
+  transform: translateX(calc((var(--tr) + (var(--tr) - var(--tr))) * 1%))
+}
+
+#contedorprincipal2 .design--7 {
+  top: 44%;
+}
+
+#contedorprincipal2 .design--8 {
+  top: 56%;
+}
+
+/* states */
+#contedorprincipal2 button:hover+.design-container,
+button:active+.design-container,
+button:focus+.design-container {
+  --tr: 20;
+  --op: .7;
+}
+
+#contedorprincipal2 .abs-site-link {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: hsla(0, 0%, 100%, .6);
+  font-size: 16px;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+

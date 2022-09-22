@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatRow, MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, NavigationExtras, Router} from '@angular/router';
@@ -38,9 +39,12 @@ export class AutorComponent implements OnInit {
     this.cargarAutor();
      this.dataSource=new MatTableDataSource(this.listaAutor);
 
-    
-    
   }
+
+  AutorN = new FormGroup({
+    nombreAutor: new FormControl('',Validators.required),
+ })
+
 
   cargarAutor(){
 
@@ -70,4 +74,22 @@ export class AutorComponent implements OnInit {
     this.dialog.open(ModificarAutorComponent, {data:Autor, width: '50%'})
 
   }
+
+  Enombre: any;
+  cargarAutorNombre(){ 
+    this.Enombre = this.AutorN.value.nombreAutor;
+
+    this.service.getNombreAutor(this.Enombre).subscribe((data : any) =>{
+    
+    this.listaAutor;
+    console.log(data);
+    console.log(this.Enombre);
+ 
+  },
+  (errorData) => {
+    alert(errorData);    
+  }
+  );
+
+}
 }
