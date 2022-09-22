@@ -4,9 +4,9 @@ import { OfertaInterface } from "./OfertaInterface";
 export interface LibroInterface {
    
     idLibro : number;
-    idAuto:AutorInterface;
+    idAuto:number;
     titulo:string;
-    idOferta:OfertaInterface;
+    idOferta: number;
     descripcion:string;
     isbn:string;
     idCategori:string;
