@@ -2,15 +2,6 @@
 <h3 class="font-weight-bold mb-0" id="TituloOf">BIENVENIDO CONOCÉ MAS ACERCA DE NUESTRAS OFERTAS</h3>
 
 
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-
 <div id="imagenes">
   <div class="thumb">
     <a>
@@ -89,212 +80,233 @@
 
   <h1 class="display-4 subtit">LIBROS EN OFERTAS</h1>
 
-  <br>
-  <br><br>
-  <!--
-   
-  <mat-form-field appearance="standard">
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ingrese información" #input>
-  </mat-form-field>
-  
- -->
-
   <form [formGroup]="ofertaNuevo">
     <mat-form-field class="campos-field">
       <input matInput placeholder="Ingrese la temporada o la categoria" formControlName="titulo">
     </mat-form-field>
 
-    <button mat-raised-button color="accent" (click)="cargarTodasOfertas()"> Todas las ofertas</button>
-    <button mat-raised-button [disabled]="!ofertaNuevo.valid" color="accent" (click)="cargarOfertasTitulo()"> Buscar
-      por Tiulo</button>
-    <button mat-raised-button [disabled]="!ofertaNuevo.valid" color="accent" (click)="cargarOfertasPrecio()"> Buscar
+    <button mat-raised-button color="accent" (click)="cargarTodasCategorias()"> Todas las ofertas </button>
+    <button mat-raised-button [disabled]="!ofertaNuevo.valid" color="accent" (click)="cargarOfertasTitulo()"> Buscar por Titulo</button>
+ <!-- flip-card-container   <button mat-raised-button [disabled]="!ofertaNuevo.valid" color="accent" (click)="cargarOfertasPrecio()"> Buscar
       por Precio</button>
-
+    -->
   </form>
-</div>
 
 
-<div>
-  <br>
-  <br>
-  <h1 class="display-4 subtit">LIBROS DE FICCION EN OFERTA</h1>
-  <br>
-  <div id="nuevoform">
 
-    <div class="hero-container">
-      <div class="main-container" *ngFor="let oferta of listaFiccion">
-        <div class="poster-container">
-          <a href="#"><img src={{oferta.portada}} height="280" width="230" class="poster" /></a>
+<div class="contenedorclasificados">
+  <br>
+  <br>
+  <h1 class="display-4 subtit">LIBROS DE CIENCIA FICCION</h1>
+  <div id="contedorprincipal2">
+    <!-- flip-card-container -->
+    <div class="flip-card-container" style="--hue: 220" *ngFor="let oferta of listaFiccion">
+      <div class="flip-card">
+
+        <div class="card-front">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{oferta.portada}} height="460" width="320">
+            <figcaption>Descuento: %{{oferta.idOferta.descuento}}</figcaption>
+          </figure>
+
+          <ul>
+            <li>{{oferta.titulo}}</li>
+            <li>Autor: {{oferta.idAuto.nombreAutor}}</li>
+            <li>Categoria: {{oferta.idCategori.nombre}}</li>
+            <li>Temporada: {{oferta.idOferta.temporada}}</li>
+            <li>
+              <p class="ticket__current-price">$ {{oferta.precio}}</p>
+            </li>
+          </ul>
         </div>
-        <div class="ticket-container">
-          <div class="ticket__content">
-            <h4 class="ticket__movie-title">{{oferta.titulo}}</h4>
-            <span>Autor: {{oferta.idAuto.nombreAutor}}</span><br>
-            <span>Categoria: {{oferta.idCategori.nombre}}</span><br>
-            <span>Temporada: {{oferta.idOferta.temporada}}</span><br>
-            <p class="ticket__old-price">% {{oferta.idOferta.descuento}}</p>
-            <p class="ticket__current-price">$ {{oferta.precio}}</p>
-            <button href="carrito" class="ticket__buy-btn">Add to cart</button>
+
+        <div class="card-back">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{oferta.portada}} height="460" width="320">
+          </figure>
+
+          <button>Comprar</button>
+
+          <div class="design-container">
+            <span class="design design--1"></span>
+            <span class="design design--2"></span>
+            <span class="design design--3"></span>
+            <span class="design design--4"></span>
+            <span class="design design--5"></span>
+            <span class="design design--6"></span>
+            <span class="design design--7"></span>
+            <span class="design design--8"></span>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
 
-<div>
-  <br>
-  <br>
-  <h1 class="display-4 subtit">LIBROS DE MISTERIO EN OFERTA</h1>
-  <br>
-  <div id="nuevoform" >
 
-    <div class="hero-container">
-      <div class="main-container" *ngFor="let oferta of listaMisterio">
-        <div class="poster-container">
-          <a href="#"><img src={{oferta.portada}} height="280" width="230" class="poster" /></a>
+
+<div class="contenedorclasificado1">
+  <br>
+  <br>
+  <h1 class="display-4 subtit">LIBROS DE MISTERIOS</h1>
+  <div id="contedorprincipal2">
+    <!-- flip-card-container -->
+    <div class="flip-card-container" style="--hue: 220" *ngFor="let oferta of listaMisterio">
+      <div class="flip-card">
+
+        <div class="card-front">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{oferta.portada}} height="460" width="320">
+            <figcaption>Descuento: %{{oferta.idOferta.descuento}}</figcaption>
+          </figure>
+
+          <ul>
+            <li>{{oferta.titulo}}</li>
+            <li>Autor: {{oferta.idAuto.nombreAutor}}</li>
+            <li>Categoria: {{oferta.idCategori.nombre}}</li>
+            <li>Temporada: {{oferta.idOferta.temporada}}</li>
+            <li>
+              <p class="ticket__current-price">$ {{oferta.precio}}</p>
+            </li>
+          </ul>
         </div>
-        <div class="ticket-container">
-          <div class="ticket__content">
-            <h4 class="ticket__movie-title">{{oferta.titulo}}</h4>
-            <span>Autor: {{oferta.idAuto.nombreAutor}}</span><br>
-            <span>Categoria: {{oferta.idCategori.nombre}}</span><br>
-            <span>Temporada: {{oferta.idOferta.temporada}}</span><br>
-            <p class="ticket__old-price">% {{oferta.idOferta.descuento}}</p>
-            <p class="ticket__current-price">$ {{oferta.precio}}</p>
-            <button href=" carrito" class="ticket__buy-btn">Add to cart</button>
+
+        <div class="card-back">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{oferta.portada}} height="460" width="320">
+          </figure>
+
+          <button>Comprar</button>
+
+          <div class="design-container">
+            <span class="design design--1"></span>
+            <span class="design design--2"></span>
+            <span class="design design--3"></span>
+            <span class="design design--4"></span>
+            <span class="design design--5"></span>
+            <span class="design design--6"></span>
+            <span class="design design--7"></span>
+            <span class="design design--8"></span>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
 
 
 
-<div>
+<div class="contenedorclasificados">
   <br>
   <br>
-  <h1 class="display-4 subtit">LIBROS CLASICOS EN OFERTA</h1>
-  <br>
-  <div id="nuevoform">
+  <h1 class="display-4 subtit">LIBROS CLASICOS</h1>
+  <div id="contedorprincipal2">
+    <!-- flip-card-container -->
+    <div class="flip-card-container" style="--hue: 220" *ngFor="let oferta of listaClasico">
+      <div class="flip-card">
 
-    <div class="hero-container">
-      <div class="main-container" *ngFor="let oferta of listaClasico">
-        <div class="poster-container">
-          <a href="#"><img src={{oferta.portada}} height="280" width="230" class="poster" /></a>
+        <div class="card-front">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{oferta.portada}} height="460" width="320">
+            <figcaption>Descuento: %{{oferta.idOferta.descuento}}</figcaption>
+          </figure>
+
+          <ul>
+            <li>{{oferta.titulo}}</li>
+            <li>Autor: {{oferta.idAuto.nombreAutor}}</li>
+            <li>Categoria: {{oferta.idCategori.nombre}}</li>
+            <li>Temporada: {{oferta.idOferta.temporada}}</li>
+            <li>
+              <p class="ticket__current-price">$ {{oferta.precio}}</p>
+            </li>
+          </ul>
         </div>
-        <div class="ticket-container">
-          <div class="ticket__content">
-            <h4 class="ticket__movie-title">{{oferta.titulo}}</h4>
-            <span>Autor: {{oferta.idAuto.nombreAutor}}</span><br>
-            <span>Categoria: {{oferta.idCategori.nombre}}</span><br>
-            <span>Temporada: {{oferta.idOferta.temporada}}</span><br>
-            <p class="ticket__old-price">% {{oferta.idOferta.descuento}}</p>
-            <p class="ticket__current-price">$ {{oferta.precio}}</p>
-            <button href=" carrito" class="ticket__buy-btn">Add to cart</button>
+
+        <div class="card-back">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{oferta.portada}} height="460" width="320">
+          </figure>
+
+          <button>Comprar</button>
+
+          <div class="design-container">
+            <span class="design design--1"></span>
+            <span class="design design--2"></span>
+            <span class="design design--3"></span>
+            <span class="design design--4"></span>
+            <span class="design design--5"></span>
+            <span class="design design--6"></span>
+            <span class="design design--7"></span>
+            <span class="design design--8"></span>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
-<script>
-  $(document).ready(function(){
-    $(".wish-icon i").click(function(){
-      $(this).toggleClass("fa-heart fa-heart-o");
-    });
-  });	
-</script>
 
-<div>
-  <br>
-  <br>
-  <h1 class="display-4 subtit">LIBROS DE FANTASIA EN OFERTA</h1>
-  <br>
-  <div id="nuevoform">
 
-    <div class="hero-container">
-      <div class="main-container" *ngFor="let oferta of listaFantasia">
-        <div class="poster-container">
-          <a href="#"><img src={{oferta.portada}} height="280" width="230" class="poster" /></a>
+<div class="contenedorclasificado1">
+  <br>
+  <br>
+  <h1 class="display-4 subtit">LIBROS DE FANTASIAS</h1>
+  <div id="contedorprincipal2">
+    <!-- flip-card-container -->
+    <div class="flip-card-container" style="--hue: 220" *ngFor="let oferta of listaFantasia">
+      <div class="flip-card">
+
+        <div class="card-front">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{oferta.portada}} height="460" width="320">
+            <figcaption>Descuento: %{{oferta.idOferta.descuento}}</figcaption>
+          </figure>
+
+          <ul>
+            <li>{{oferta.titulo}}</li>
+            <li>Autor: {{oferta.idAuto.nombreAutor}}</li>
+            <li>Categoria: {{oferta.idCategori.nombre}}</li>
+            <li>Temporada: {{oferta.idOferta.temporada}}</li>
+            <li>
+              <p class="ticket__current-price">$ {{oferta.precio}}</p>
+            </li>
+          </ul>
         </div>
-        <div class="ticket-container">
-          <div class="ticket__content">
-            <h4 class="ticket__movie-title">{{oferta.titulo}}</h4>
-            <span>Autor: {{oferta.idAuto.nombreAutor}}</span><br>
-            <span>Categoria: {{oferta.idCategori.nombre}}</span><br>
-            <span>Temporada: {{oferta.idOferta.temporada}}</span><br>
-            <p class="ticket__old-price">% {{oferta.idOferta.descuento}}</p>
-            <p class="ticket__current-price">$ {{oferta.precio}}</p>
-            <button href=" carrito" class="ticket__buy-btn">Add to cart</button>
-         </div>
-        
+
+        <div class="card-back">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{oferta.portada}} height="460" width="320">
+          </figure>
+
+          <button>Comprar</button>
+
+          <div class="design-container">
+            <span class="design design--1"></span>
+            <span class="design design--2"></span>
+            <span class="design design--3"></span>
+            <span class="design design--4"></span>
+            <span class="design design--5"></span>
+            <span class="design design--6"></span>
+            <span class="design design--7"></span>
+            <span class="design design--8"></span>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
 
+</div>
 <br>
 
 <!-- end product 
 <button mat-raised-button color="accent" (click)="openDialogAgregar()"> Agregar</button>
 
 -->
-
-
-<div id="contedorprincipal2">
-<div class="container-xl">
-	<div class="row">
-		<div class="col-md-12">
-			<h2>Featured <b>Products</b></h2>
-			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-			<!-- Carousel indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>   
-			<!-- Wrapper for carousel items -->
-			<div class="carousel-inner">
-				<div class="item carousel-item active">
-					<div class="row">
-						<div class="col-sm-3" *ngFor="let oferta of listaFantasia">
-							<div class="thumb-wrapper">
-								<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-								<div class="img-box">
-									<img src={{oferta.portada}} class="img-fluid" height="280" width="230">									
-								</div>
-								<div class="thumb-content">
-									<h4>{{oferta.titulo}}</h4>									
-                  <span>Autor: {{oferta.idAuto.nombreAutor}}</span><br>
-                  <span>Categoria: {{oferta.idCategori.nombre}}</span><br>
-                  <span>Temporada: {{oferta.idOferta.temporada}}</span><br>
-									<p class="item-price">% {{oferta.idOferta.descuento}} <b>$ {{oferta.precio}}</b></p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
-								</div>						
-							</div>
-						</div>	
-						
-					</div>
-				</div>
-		
-			</div>
-			<!-- Carousel controls -->
-			<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-				<i class="fa fa-angle-left"></i>
-			</a>
-			<a class="carousel-control-next" href="#myCarousel" data-slide="next">
-				<i class="fa fa-angle-right"></i>
-			</a>
-		</div>
-		</div>
-	</div>
-</div>
-</div>
