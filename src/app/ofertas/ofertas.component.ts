@@ -24,22 +24,29 @@ export class OfertasComponent implements OnInit {
 */
   //Arreglo de datos
   listaOferta: any =[];
+  listaFiccion: any =[];
+  listaMisterio: any =[];
+  listaClasico: any =[];
+  listaFantasia: any =[];
+
+
+
 
   constructor(private router: Router,public dialog:MatDialog,private servicios : BookStoreService) { 
-    this.cargarTodasFiccion();
-    this.cargarTodasMisterio();
-    this.cargarTodasClasico();
-    this.cargarTodasFantasia();
-  };
+     };
 
   ngOnInit(): void {
    //this.cargarTodasOfertas();
- 
+   this.cargarTodasFiccion();
+   this.cargarTodasMisterio();
+   this.cargarTodasClasico();
+   this.cargarTodasFantasia();
+
 
   }
 
   ofertaNuevo = new FormGroup({
-    busqueda: new FormGroup('',Validators.required),
+    titulo: new FormGroup('',Validators.required),
  })
 
 //Cargas todos los libros con ofertas
@@ -56,12 +63,15 @@ export class OfertasComponent implements OnInit {
  
  //Metodo para mostrar los libros con ofertas x temporada
  temporadaTemp: any;
- cargarOfertasTemporada(){ 
-      this.temporadaTemp = this.ofertaNuevo.value.busqueda;
+ cargarOfertasTitulo(){ 
+      this.temporadaTemp = this.ofertaNuevo.value.titulo;
   
-      this.servicios.getOfertasXTemporada(this.temporadaTemp).subscribe((data : any) =>{
+      this.servicios.getOfertasXTitulo(this.temporadaTemp).subscribe((data : any) =>{
+      
       this.listaOferta = data;
       console.log(data);
+      console.log(this.temporadaTemp);
+      alert(this.ofertaNuevo.value.titulo);
 
     },
       (errorData) => (alert("Usuario no autorizado!"),
@@ -72,13 +82,14 @@ export class OfertasComponent implements OnInit {
 
   //Metodo para mostrar todos los libros por categoria
   categoriaTemp: any;
-  cargarOfertasCategoria(){
-    this.categoriaTemp = this.ofertaNuevo.value.busqueda;
+  cargarOfertasPrecio(){
+    this.categoriaTemp = this.ofertaNuevo.value.titulo;
   
-    this.servicios.getOfertasXCategoria(this.categoriaTemp).subscribe((data : any) =>{
+    this.servicios.getOfertasXPrecio(this.categoriaTemp).subscribe((data : any) =>{
     this.listaOferta =data;
     console.log(data);
-
+    console.log(this.categoriaTemp);
+    alert(this.categoriaTemp);
   },
   (errorData) => (alert("Usuario no autorizado!"),
       this.router.navigate(['/'])));
@@ -89,7 +100,7 @@ export class OfertasComponent implements OnInit {
 cargarTodasFiccion(){
 
   this.servicios.getOfertasFiccion().subscribe((data : any) =>{
-  this.listaOferta =data;
+  this.listaFiccion =data;
   console.log(data);
 },
 (errorData) => (alert("Usuario no autorizado!"),
@@ -100,7 +111,7 @@ cargarTodasFiccion(){
 cargarTodasMisterio(){
 
   this.servicios.getOfertasMisterio().subscribe((data : any) =>{
-  this.listaOferta = data;
+  this.listaMisterio = data;
   console.log(data);
 },
 (errorData) => (alert("Usuario no autorizado!"),
@@ -112,7 +123,7 @@ cargarTodasMisterio(){
 cargarTodasClasico(){
 
   this.servicios.getOfertasClasico().subscribe((data : any) =>{
-  this.listaOferta =data;
+  this.listaClasico =data;
   console.log(data);
 },
 (errorData) => (alert("Usuario no autorizado!"),
@@ -123,7 +134,7 @@ cargarTodasClasico(){
 cargarTodasFantasia(){
 
   this.servicios.getOfertasFantasia().subscribe((data : any) =>{
-  this.listaOferta =data;
+  this.listaFantasia =data;
   console.log(data);
 },
 (errorData) => (alert("Usuario no autorizado!"),

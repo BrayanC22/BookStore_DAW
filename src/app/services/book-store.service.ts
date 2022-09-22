@@ -25,24 +25,26 @@ export class BookStoreService {
 
   
  //Metodo para mostrar los libros con ofertas x temporada
-  getOfertasXTemporada(temporada:string){
+  getOfertasXPrecio(precio:number){
     let auth_Token = localStorage.getItem('token_value');
     const header = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `bearer ${auth_Token}`
     })
-    return this.http.get(this.urlhost + this.urlApi + temporada + "/BuscarLibroXTemporada" ,{headers: header});
+
+    return this.http.get(this.urlhost + this.urlApi + precio + "/BuscarLibroXPrecio" ,{headers: header});
   }
 
 
   //Metodo para mostrar todos los libros por categoria
-  getOfertasXCategoria(categoria:string){
+  getOfertasXTitulo(titulo:string){
     let auth_Token = localStorage.getItem('token_value');
     const header = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `bearer ${auth_Token}`
     })
-    return this.http.get(this.urlhost + this.urlApi +  categoria + "/BuscarCategoriaConOfertas",{headers: header});
+
+    return this.http.get(this.urlhost + this.urlApi +  titulo + "/BuscarlibroConOfertasTitulo",{headers: header});
   }
 
   //Metodo para mostrar todos los libros por categoria
