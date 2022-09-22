@@ -15,25 +15,77 @@ import { ServiciosService } from '../ServicioLibro/servicios.service';
 })
 export class LibroComponent implements OnInit {
 
-  applyFilter(event: Event) {
+  /*applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.listaLibro.filter = filterValue.trim().toLowerCase();
   }
-
+*/
   listaLibro: any =[];
+  listasFiccion: any =[];
+  listasMisterio: any =[];
+  listasClasico: any =[];
+  listasFantasia: any =[];
   //Arreglo que ayuda a definir las columnas que van a aparecer en la tabla
 
   
   constructor(private router: Router,public dialog:MatDialog,private service : LibroService ) { };
 
   ngOnInit(): void {
-    this.cargarLibro();
+    //this.cargarLibro();
+   this.cargaTodasFiccion();
+   this.cargaTodasMisterio();
+   this.cargaTodasClasico();
+   this.cargaTodasFantasia();
   
   }
+//Cargas todos los libros con Ficcion
+cargaTodasFiccion(){
+
+  this.service .getLibroFiccion().subscribe((data : any) =>{
+  this.listasFiccion =data;
+  console.log(data);
+},
+(errorData) => (alert("Usuario no autorizado!"),
+    this.router.navigate(['/'])));
+}
+
+//Cargas todos los libros con Misterio
+cargaTodasMisterio(){
+
+  this.service .getLibroMisterio().subscribe((data : any) =>{
+  this.listasMisterio = data;
+  console.log(data);
+},
+(errorData) => (alert("Usuario no autorizado!"),
+    this.router.navigate(['/'])));
+}
+
+
+//Cargas todos los libros con Clasico
+cargaTodasClasico(){
+
+  this.service .getLibroClasico().subscribe((data : any) =>{
+  this.listasClasico =data;
+  console.log(data);
+},
+(errorData) => (alert("Usuario no autorizado!"),
+    this.router.navigate(['/'])));
+}
+
+//Cargas todos los libros con Fantasia
+cargaTodasFantasia(){
+
+  this.service .getLibroFantasia().subscribe((data : any) =>{
+  this.listasFantasia =data;
+  console.log(data);
+},
+(errorData) => (alert("Usuario no autorizado!"),
+    this.router.navigate(['/'])));
+}
 
 
   //mostrar todos.
-  cargarLibro(){
+  /*cargarLibro(){
   
     this.service.getLibro().subscribe((data : any) =>{
       this.listaLibro = data;
@@ -46,7 +98,7 @@ export class LibroComponent implements OnInit {
     );
    }
  
- 
+ */
  
  
   /*openDialogAgregar(){
