@@ -35,7 +35,7 @@ export class LibroService {
 
   }
 //Metodo para mostrar todos los libros por categoria
-getOfertasFiccion(){
+getLibroFiccion(){
   let auth_Token = localStorage.getItem('token_value');
   const header = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ getOfertasFiccion(){
 
 
 //Metodo para mostrar todos los libros por categoria
-getOfertasMisterio(){
+getLibroMisterio(){
 let auth_Token = localStorage.getItem('token_value');
 const header = new HttpHeaders({
   'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ return this.http.get(this.urlhost + "BuscarCategoriaMisterio/" ,{headers: header
 } 
 
 //Metodo para mostrar todos los libros por categoria
-getOfertasClasico(){
+getLibroClasico(){
 let auth_Token = localStorage.getItem('token_value');
 const header = new HttpHeaders({
   'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ return this.http.get(this.urlhost + "BuscarCategoriaClasico/" ,{headers: header}
 }
 
 //Metodo para mostrar todos los libros por categoria
-getOfertasFantasia(){
+getLibroFantasia(){
 let auth_Token = localStorage.getItem('token_value');
 const header = new HttpHeaders({
   'Content-Type': 'application/json',
