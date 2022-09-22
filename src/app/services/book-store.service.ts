@@ -24,7 +24,7 @@ export class BookStoreService {
 
 
 
-  //Metodo para mostrar todos los libros por categoria
+  //Metodo para mostrar todos los libros por titulo
   getOfertasXTitulo(titulo:string){
     let auth_Token = localStorage.getItem('token_value');
     const header = new HttpHeaders({
