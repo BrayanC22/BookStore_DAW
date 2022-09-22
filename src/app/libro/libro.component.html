@@ -48,117 +48,225 @@
   </div>
 </div>
 
-<!-- -
-<button mat-raised-button color="accent" (click)="openDialogAgregar()"> Agregar</button>
-<br><br>
-<mat-form-field appearance="standard">
-  <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Ingrese información" #input>
-</mat-form-field>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table table-hover">
+<!--PRODUCTOS LIBRO-->
+<div >
+  <br>
+  <br>
+  <h1 class="display-4 subtit">LIBROS DE CIENCIA FICCION</h1>
+  <div id="contedorprincipal2">
+    <!-- flip-card-container -->
+    <div class="flip-card-container" style="--hue: 220" *ngFor="let Libro of listasFiccion">
+      <div class="flip-card">
 
+        <div class="card-front">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{Libro.portada}} height="460" width="320">
+          
+          </figure>
 
-
-  <ng-container matColumnDef="Titulo">
-    <th mat-header-cell *matHeaderCellDef> Titulo </th>
-    <td mat-cell *matCellDef="let element"> {{element.Titulo}} </td>
-  </ng-container>
-
- 
-  <ng-container matColumnDef="Nombre">
-    <th mat-header-cell *matHeaderCellDef> Nombre </th>
-    <td mat-cell *matCellDef="let element"> {{element.Nombre}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Categoria">
-    <th mat-header-cell *matHeaderCellDef>Categoria </th>
-    <td mat-cell *matCellDef="let element"> {{element.Categoria}} </td>
-  </ng-container>
-
-
-
-  <ng-container matColumnDef="Precio">
-    <th mat-header-cell *matHeaderCellDef> Precio </th>
-    <td mat-cell *matCellDef="let element"> {{element.Precio}} </td>
-  </ng-container>
-
- 
-
-  <ng-container matColumnDef="Descripcion">
-    <th mat-header-cell *matHeaderCellDef> Descripcion </th>
-    <td mat-cell *matCellDef="let element"> {{element.Descripcion}}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="Iva">
-    <th mat-header-cell *matHeaderCellDef> Iva</th>
-    <td mat-cell *matCellDef="let element"> {{element.Iva}} </td>
-  </ng-container>
-
-
-  <ng-container matColumnDef="Modificar">
-    <th mat-header-cell *matHeaderCellDef> Opciones </th>
-    <td mat-cell *matCellDef="let element"><button mat-raised-button color="accent"
-        (click)="openDialogModificar(element)">Modificar</button></td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-  
-  <tr class="mat-row" *matNoDataRow>
-    <td class="mat-cell" colspan="4">Asegurese que la información solicitada exista"{{input.value}}"</td>
-  </tr>
-
-</table>-->
-<!-- LibroP -->
-<div class="row row2" >  
-  <h1 class="display-4 subtit">LIBROS 2022</h1>
-
-<div class="col-xs-12 col-md-6 bootstrap snippets bootdeys" *ngFor="let libro of listaLibro">
-  <!-- product -->
-  <div class="product-content product-wrap clearfix"  >
-    <div class="row">
-      <div class="col-md-5 col-sm-12 col-xs-12">
-        <div class="product-image">
-          <img src="assets/Recursos/Imagenes/librolista11.jpg" alt="60x60" class="img-responsive">
-
+          <ul>
+            <li>{{Libro.titulo}}</li>
+            <li>Autor: {{Libro.idAuto.nombreAutor}}</li>
+            <li>Categoria: {{Libro.idCategori.nombre}}</li>
+            <li>Isbn:{{Libro.isbn}}</li>
+            <li>
+              <p class="ticket__current-price">$ {{Libro.precio}}</p>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="col-md-7 col-sm-12 col-xs-12">
-        <div class="product-deatil">
-          <h5 class="name">
-            <a>
-              Titulo: {{libro.titulo}}
-               <span>Autor: {{libro.idAuto.nombreAutor}}</span>
-               <span>Categoria: {{libro.idCategori.nombre}}</span>
-               <span>Isbn:{{libro.isbn}}</span>
-            </a>
-          </h5>
-          <p class="">
-            Precio:<span> ${{libro.precio}}</span> <br>
-          </p>
-          <span class="tag1"></span>
-        </div>
-        <div class="description">
-          <p>{{libro.descripcion}}</p>
-        </div>
-        <div class="product-info smart-form">
-          <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-6">
-              <a href=" carrito" class="btn btn-success">Add to cart</a>
-            </div>
 
+        <div class="card-back">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{Libro.portada}} height="460" width="320">
+            <p>{{Libro.descripcion}}</p>
+          </figure>
 
+          <button>Comprar</button>
+
+          <div class="design-container">
+            <span class="design design--1"></span>
+            <span class="design design--2"></span>
+            <span class="design design--3"></span>
+            <span class="design design--4"></span>
+            <span class="design design--5"></span>
+            <span class="design design--6"></span>
+            <span class="design design--7"></span>
+            <span class="design design--8"></span>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- end product -->
-</div>
 </div>
 
+
+
+<div >
+  <br>
+  <br>
+  <h1 class="display-4 subtit">LIBROS DE MISTERIOS</h1>
+  <div id="contedorprincipal2">
+    <!-- flip-card-container -->
+    <div class="flip-card-container" style="--hue: 220" *ngFor="let Libro of listasMisterio">
+      <div class="flip-card">
+
+        <div class="card-front">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{Libro.portada}} height="460" width="320">
+          </figure>
+
+          <ul>
+            <li>{{Libro.titulo}}</li>
+            <li>Autor: {{Libro.idAuto.nombreAutor}}</li>
+            <li>Categoria: {{Libro.idCategori.nombre}}</li>
+            <li>Isbn:{{Libro.isbn}}</li>
+            <li>
+              <p class="ticket__current-price">$ {{Libro.precio}}</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-back">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{Libro.portada}} height="460" width="320">
+            <p>{{Libro.descripcion}}</p>
+          </figure>
+
+          <button>Comprar</button>
+
+          <div class="design-container">
+            <span class="design design--1"></span>
+            <span class="design design--2"></span>
+            <span class="design design--3"></span>
+            <span class="design design--4"></span>
+            <span class="design design--5"></span>
+            <span class="design design--6"></span>
+            <span class="design design--7"></span>
+            <span class="design design--8"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div>
+  <br>
+  <br>
+  <h1 class="display-4 subtit">LIBROS CLASICOS</h1>
+  <div id="contedorprincipal2">
+    <!-- flip-card-container -->
+    <div class="flip-card-container" style="--hue: 220" *ngFor="let Libro of listasClasico">
+      <div class="flip-card">
+
+        <div class="card-front">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{Libro.portada}} height="460" width="320">
+          </figure>
+
+          <ul>
+            <li>{{Libro.titulo}}</li>
+            <li>Autor: {{Libro.idAuto.nombreAutor}}</li>
+            <li>Categoria: {{Libro.idCategori.nombre}}</li>
+            <li>Isbn:{{Libro.isbn}}</li>
+            <li>
+              <p class="ticket__current-price">$ {{Libro.precio}}</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-back">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{Libro.portada}} height="460" width="320">
+            <p>{{Libro.descripcion}}</p>
+          </figure>
+
+          <button>Comprar</button>
+
+          <div class="design-container">
+            <span class="design design--1"></span>
+            <span class="design design--2"></span>
+            <span class="design design--3"></span>
+            <span class="design design--4"></span>
+            <span class="design design--5"></span>
+            <span class="design design--6"></span>
+            <span class="design design--7"></span>
+            <span class="design design--8"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div >
+  <br>
+  <br>
+  <h1 class="display-4 subtit">LIBROS DE FANTASIAS</h1>
+  <div id="contedorprincipal2">
+    <!-- flip-card-container -->
+    <div class="flip-card-container" style="--hue: 220" *ngFor="let Libro of listasFantasia">
+      <div class="flip-card">
+
+        <div class="card-front">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{Libro.portada}} height="460" width="320">
+           
+          </figure>
+
+          <ul>
+            <li>{{Libro.titulo}}</li>
+            <li>Autor: {{Libro.idAuto.nombreAutor}}</li>
+            <li>Categoria: {{Libro.idCategori.nombre}}</li>
+            <li>Isbn:{{Libro.isbn}}</li>
+            <li>
+              <p class="ticket__current-price">$ {{Libro.precio}}</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-back">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{Libro.portada}} height="460" width="320">
+            
+          </figure>
+        
+          <button>Comprar</button>
+
+          <div class="design-container">
+            <span class="design design--1"></span>
+            <span class="design design--2"></span>
+            <span class="design design--3"></span>
+            <span class="design design--4"></span>
+            <span class="design design--5"></span>
+            <span class="design design--6"></span>
+            <span class="design design--7"></span>
+            <span class="design design--8"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<!-- end product 
+<button mat-raised-button color="accent" (click)="openDialogAgregar()"> Agregar</button>
+
+-->
 
 
 
