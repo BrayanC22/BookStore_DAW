@@ -20,7 +20,7 @@ export class LibroService {
       'Content-Type': 'application/json',
       'Authorization': `bearer ${auth_Token}`
     })
-    return this.http.get(this.urlhost + this.urlApi,{headers: header});
+    return this.http.get(this.urlhost + "Buscarsinoferta",{headers: header});
   }
   
   
@@ -34,7 +34,46 @@ export class LibroService {
 
 
   }
+//Metodo para mostrar todos los libros por categoria
+getOfertasFiccion(){
+  let auth_Token = localStorage.getItem('token_value');
+  const header = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `bearer ${auth_Token}`
+  })
+  return this.http.get(this.urlhost + "BuscarCategoriaFiccion/",{headers: header});
+}
 
+
+//Metodo para mostrar todos los libros por categoria
+getOfertasMisterio(){
+let auth_Token = localStorage.getItem('token_value');
+const header = new HttpHeaders({
+  'Content-Type': 'application/json',
+  'Authorization': `bearer ${auth_Token}`
+})
+return this.http.get(this.urlhost + "BuscarCategoriaMisterio/" ,{headers: header});
+} 
+
+//Metodo para mostrar todos los libros por categoria
+getOfertasClasico(){
+let auth_Token = localStorage.getItem('token_value');
+const header = new HttpHeaders({
+  'Content-Type': 'application/json',
+  'Authorization': `bearer ${auth_Token}`
+})
+return this.http.get(this.urlhost + "BuscarCategoriaClasico/" ,{headers: header});
+}
+
+//Metodo para mostrar todos los libros por categoria
+getOfertasFantasia(){
+let auth_Token = localStorage.getItem('token_value');
+const header = new HttpHeaders({
+  'Content-Type': 'application/json',
+  'Authorization': `bearer ${auth_Token}`
+})
+return this.http.get(this.urlhost + "BuscarCategoriaFantasia/" ,{headers: header});
+}
 
 
   
