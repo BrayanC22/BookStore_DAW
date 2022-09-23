@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { credenciales, Usuarios } from 'src/app/Interfaces/UsuarioLogin';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class LoginService {
 
-  baseUrl: string = 'https://localhost:7295/api/Usuarios/';
+  baseUrl: string = environment.endpoint +'api/Usuarios/';
   constructor(private http: HttpClient) { }
 
   login(user: credenciales){

@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
 import { LoginService } from '../services/login.service';
+import { credenciales } from '../Interfaces/UsuarioLogin';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ import { LoginService } from '../services/login.service';
 })
 export class HeaderComponent implements OnInit {
 
-  username!:string;
+  username!:any;
   logged!:boolean;
 
   constructor(private router: Router,private dialog:MatDialog,  private loginService: LoginService) { }
@@ -22,8 +23,14 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.loginService.getUsername.subscribe(username => this.username = username);
-    //this.loginService.getLogged.subscribe(logged => this.logged = logged);
+    this.username = this.loginService.getUsername;
+    this.logged = this.loginService.isAutenticado;
   }
+
+  cerrarSesion(){
+        localStorage.setItem('token_value',"");
+        this.router.navigate(['/']);
+        
+      }
   
 }

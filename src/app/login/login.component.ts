@@ -40,10 +40,13 @@ export class LoginComponent {
     
     this.loginService.login(this.credenciales.value as credenciales).subscribe((data:any)=>{
       console.log(data);
-      localStorage.setItem('NombreUsuario',this.usuarioTemp);
+      localStorage.setItem('nombreUsuario',this.usuarioTemp);
       localStorage.setItem('token_value',data);
       this.router.navigate(['/libro']);
+      
+
       this.dialogRef.close();
+      
     },
     (errorData)=> alert("El correo/contraseña son incorrectos."))
     }
@@ -52,7 +55,7 @@ export class LoginComponent {
     onRegister(){
       this.usuarioTemp = this.Usuarios.value;
       //alert(this.usuarioTemp);
-      
+
       this.loginService.RegistrarUsuario(this.Usuarios.value as Usuarios).subscribe((data:any)=>{
         console.log(data);
         alert("Usuario registrado");
@@ -60,5 +63,7 @@ export class LoginComponent {
       },
       (errorData)=> alert("Error al registrar usuario"))
       }
+
+      
     
   }
