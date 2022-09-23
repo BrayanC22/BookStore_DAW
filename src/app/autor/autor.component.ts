@@ -17,28 +17,19 @@ import { ServiciosService } from '../ServicioAutor/servicios.service';
 export class AutorComponent implements OnInit {
 
  
-  //Función para el filtro de la tabla.
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
 
   //Arreglo de datos
-  listaAutor: any
-  //Arreglo que ayuda a definir las columnas que van a aparecer en la tabla
-  displayedColumns: string[] = ['idAutor','nombreAutor', 'biografia','twitter','instagram','fotoAutor']
-  
-  dataSource = new MatTableDataSource<any>;
-  
+  listaAutor: any=[];
+  listaNombreA: any=[];
 
-  constructor(public dialog:MatDialog, private AutorServicio:ServiciosService, private service : AutorService ) { 
+
+  constructor(public dialog:MatDialog, private service : AutorService ) { 
     
   };
 
   ngOnInit(): void {
     this.cargarAutor();
-     this.dataSource=new MatTableDataSource(this.listaAutor);
-
+   
   }
 
   AutorN = new FormGroup({
@@ -50,7 +41,7 @@ export class AutorComponent implements OnInit {
 
     this.service.getAutor().subscribe((data : any) =>{
       this.listaAutor = data;
-      alert(data);
+      
     },
     (errorData) => {
       alert(errorData);    
@@ -81,9 +72,9 @@ export class AutorComponent implements OnInit {
 
     this.service.getNombreAutor(this.Enombre).subscribe((data : any) =>{
     
-    this.listaAutor;
-    console.log(data);
-    console.log(this.Enombre);
+    this.listaNombreA = data;
+ 
+    
  
   },
   (errorData) => {

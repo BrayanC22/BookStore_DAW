@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 export class AutorService {
 
   private urlhost: string = environment.endpoint;
-  private urlApi: string = 'api/Autors';
+  private urlApi: string = 'api/Autors/';
   constructor(private http: HttpClient) { }  
 
 
@@ -30,6 +30,8 @@ export class AutorService {
     })
     return this.http.get(this.urlhost + this.urlApi + nombre + "/EmpiezaNombre",{headers: header});
   }
+
+
 
 
 
