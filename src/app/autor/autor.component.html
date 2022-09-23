@@ -38,18 +38,66 @@
 
 </div>
 
+
+<div id="AutoresT" >
+  
+ 
+  <div class="Ti1">
+
+    <h1> AUTORES</h1>
+  </div>
+  <div class="containerA" >
+    
+    
+     
+    
+
+    <div class="box" *ngFor="let oferta of listaAutor">
+        <div class="imgBox">
+            <img src={{oferta.fotoAutor}}>
+        </div>
+        <div class="content">
+            <h2>{{oferta.nombreAutor}}</h2>
+        </div>
+    </div>
+  
+  </div>
+
+</div>
+
+
+
+
+
+
 <div class="Fondo2">
 
   <div class="sign2">
-    <span class="sign__word">AUTORES</span>
+    <span class="sign__word">BUSQUEDA DE AUTORES</span>
 
   </div>
+
+  <form [formGroup]="AutorN">
+  <mat-form-field class="campos-field">
+    <input matInput placeholder="Ingrese la temporada o la categoria" formControlName="nombreAutor">
+  </mat-form-field>
+
+
+ 
+  <button mat-raised-button [disabled]="!AutorN.valid" color="accent" (click)="cargarAutorNombre()"> Buscar por Nombre</button>
+
+</form>
+
+
+
+
+
 
   <div class="team-boxed">
     <div class="container">
       
       <div class="row people" >
-        <div class="col-md-6 col-lg-4 item" *ngFor="let oferta of listaAutor">
+        <div class="col-md-6 col-lg-4 item" *ngFor="let oferta of listaNombreA">
           <div class="box"><img class="rounded-circle" src= {{oferta.fotoAutor}}>
             <h3 class="name">{{oferta.nombreAutor}}</h3>
             <p class="description">{{oferta.biografia}} </p>
@@ -61,51 +109,5 @@
     </div>
   </div>
 
-
-
 </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">idAutor</th>
-      <th scope="col">nombreAutor</th>
-      <th scope="col">biografia</th>
-      <th scope="col">twitter</th>
-      <th scope="col">instagram</th>
-      <th scope="col">fotoAutor</th>
-
-
-    </tr>
-  </thead>
-  <tbody>
-    <div>
-      <div *ngFor="let oferta of listaAutor">
-        <tr>
-          <th>{{oferta.idAutor}}</th>
-          <td>{{oferta.nombreAutor}}</td>
-          <td>{{oferta.biografia}}</td>
-          <td>{{oferta.twitter}}</td>
-          <td>{{oferta.instagram}}</td>
-          <td>{{oferta.fotoAutor}}</td>
-        </tr>
-
-      </div>
-
-    </div>
-
-  </tbody>
-</table>
-
-
-<form [formGroup]="Enombre">
-  <mat-form-field class="campos-field">
-    <input matInput placeholder="Ingrese la temporada o la categoria" formControlName="nombreAutor">
-  </mat-form-field>
-
- 
-  <button mat-raised-button [disabled]="!AutorN.valid" color="accent" (click)="cargarAutorNombre()"> Buscar por Nombre</button>
-<!-- flip-card-container   <button mat-raised-button [disabled]="!ofertaNuevo.valid" color="accent" (click)="cargarOfertasPrecio()"> Buscar
-    por Precio</button>
-  -->
-</form>
