@@ -77,16 +77,25 @@
 
   </div>
 
-  <form [formGroup]="AutorN">
-  <mat-form-field class="campos-field">
-    <input matInput placeholder="Ingrese la temporada o la categoria" formControlName="nombreAutor">
-  </mat-form-field>
 
 
- 
-  <button mat-raised-button [disabled]="!AutorN.valid" color="accent" (click)="cargarAutorNombre()"> Buscar por Nombre</button>
+<form id="botonnombre">
+
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+     
+      <form class="d-flex" [formGroup]="AutorN">
+        <input class="form-control me-2" type="search" placeholder="Ingrese el Nombre del autor"
+          formControlName="nombreAutor">
+        <button class="btn btn-outline-success" (click)="cargarAutorNombre()">Buscar</button>
+         
+      </form>
+    </div>
+  </nav>
 
 </form>
+
+
 
 
 
