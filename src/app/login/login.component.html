@@ -21,7 +21,8 @@
 
 
                                         <h4 class="Nventana">Iniciar sesion</h4>
-                                        <form [formGroup]="usuarioLogin" (ngSubmit)="onSubmit()">
+
+                                        <form [formGroup]="credenciales" (ngSubmit)="onSubmit()">
                                             <div class="form-group" >
                                                 <input type="text" name="logemail" class="form-style" placeholder="Usuario" id="logemail" autocomplete="off" formControlName="nombreUsuario">
                                                 <i class="input-icon uil uil-at"></i>
@@ -30,7 +31,7 @@
                                                 <input type="password" name="logpass" class="form-style" placeholder="Contraseña" id="logpass" autocomplete="off" formControlName="password">
                                                 <i class="input-icon uil uil-lock-alt"></i>
                                             </div>
-                                            <button class="btn mt-4" mat-raised-button [disabled] = "!usuarioLogin.valid">Ingresar</button>
+                                            <button class="btn mt-4" mat-raised-button [disabled] = "!credenciales.valid">Ingresar</button>
                                         </form>
 
                                         <p class="mb-0 mt-4 text-center"><a href="#0" class="link">¿Ha olvidado su contraseña?</a></p>
@@ -43,19 +44,32 @@
 
 
                                         <h4 class="Nventana">Registrarse</h4>
-                                        <div class="form-group">
-                                            <input type="text" name="logname" class="form-style" placeholder="Nombres completos" id="logname" autocomplete="off">
-                                            <i class="input-icon uil uil-user"></i>
-                                        </div>	
-                                        <div class="form-group mt-2">
-                                            <input type="text" name="logemail" class="form-style" placeholder="Usuario" id="logemail" autocomplete="off">
-                                            <i class="input-icon uil uil-at"></i>
-                                        </div>	
-                                        <div class="form-group mt-2">
-                                            <input type="password" name="logpass" class="form-style" placeholder="Contraseña" id="logpass" autocomplete="off">
-                                            <i class="input-icon uil uil-lock-alt"></i>
-                                        </div>
-                                        <a href="#" class="btn mt-4">Confirmar</a>
+                                        <form [formGroup]="Usuarios" (ngSubmit)="onRegister()">
+                                            <div class="form-group" >
+                                                <input type="text" name="nombre" class="form-style" placeholder="Nombres" id="nombre" autocomplete="off" formControlName="nombre">
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>	
+                                            <div class="form-group" >
+                                                <input type="text" name="apellido" class="form-style" placeholder="Apellidos" id="apellido" autocomplete="off" formControlName="apellido">
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>	
+
+                                            <div class="form-group" >
+                                                <input type="date" name="logemail" class="form-style" id="logemail" autocomplete="off" formControlName="fechaNacimiento">
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>	
+                                            
+
+                                            <div class="form-group" >
+                                                <input type="text" name="logemail" class="form-style" placeholder="Usuario" id="logemail" autocomplete="off" formControlName="nombreUsuario">
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>	
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="logpass" class="form-style" placeholder="Contraseña" id="logpass" autocomplete="off" formControlName="password">
+                                                <i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+                                            <button class="btn mt-4" mat-raised-button [disabled] = "!Usuarios.valid">Registrar</button>
+                                        </form>
                                       </div>
                                   </div>
                               </div>
