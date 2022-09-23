@@ -594,7 +594,15 @@ font-size: 22px;
   }
 }
 
+#botonnombre p{
+  margin-left: 25%;
+}
+#botonnombre button{
 
+background-color: #dddd;
+color:black;
+
+}
 
 
 @import url('https://fonts.googleapis.com/css?family=Lato');
