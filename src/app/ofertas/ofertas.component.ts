@@ -28,7 +28,7 @@ export class OfertasComponent implements OnInit {
   listaMisterio: any =[];
   listaClasico: any =[];
   listaFantasia: any =[];
-
+  listaBusqueda: any=[];
 
 
 
@@ -37,12 +37,9 @@ export class OfertasComponent implements OnInit {
   };
 
   ngOnInit(): void {
-   //this.cargarTodasOfertas();
-   this.cargarTodasFiccion();
-   this.cargarTodasMisterio();
-   this.cargarTodasClasico();
-   this.cargarTodasFantasia();
-
+   this.cargarTodasCategorias();
+   //this.cargarOfertasTitulo();
+   this.mostrarDiv();
 
   }
 
@@ -52,7 +49,7 @@ export class OfertasComponent implements OnInit {
 
 //Cargas todos los libros con ofertas
  cargarTodasOfertas(){
-
+    
     this.servicios.getOfertas().subscribe((data : any) =>{
     this.listaOferta =data;
     console.log(data);
@@ -65,10 +62,12 @@ export class OfertasComponent implements OnInit {
  //Metodo para mostrar los libros con ofertas x temporada
  temporadaTemp: any;
  cargarOfertasTitulo(){ 
+  
+    this.mostrarDiv2();
       this.temporadaTemp = this.ofertaNuevo.value.titulo;
       this.servicios.getOfertasXTitulo(this.temporadaTemp).subscribe((data : any) =>{
       
-      this.listaOferta=data;
+      this.listaBusqueda=data;
   alert(data);
 
     },
@@ -76,6 +75,8 @@ export class OfertasComponent implements OnInit {
       this.router.navigate(['/'])));
   }
 
+
+    
 
 
 //Cargas todos los libros con Ficcion
@@ -144,15 +145,38 @@ cargarTodasCategorias(){
     this.dialog.open(ModificarOfertaComponent, {data:Oferta, width: '50%'})
   }
   
+  dato = false;
+  mostrarDiv(){
+  let divMostrar= <HTMLVideoElement> document.getElementById("ContFundamental")
+  let divMostrar1= <HTMLVideoElement> document.getElementById("contenedorFundamental1")
+
+ if(this.dato == false){
+  divMostrar.classList.replace('d-none','d-block');
+  divMostrar1.classList.replace('d-block','d-none');
+
+  this.dato=true;
+ }else{
+  divMostrar.classList.replace('d-block','d-none');
+  this.dato=false;
+ }
+
 }
 
+mostrarDiv2(){
+  this.mostrarDiv();
+let divMostrar= <HTMLVideoElement> document.getElementById("contenedorFundamental1")
+let divMostrar1= <HTMLVideoElement> document.getElementById("contenedorFundamental1")
 
+if(this.dato == false){
+  divMostrar.classList.replace('d-block','d-none');
+  divMostrar1.classList.replace('d-none','d-block');
+this.dato=true;
+}else{
+divMostrar1.classList.replace('d-block','d-none');
 
+this.dato=false;
+}
 
+}
 
-
-
-
-
-
-
+}

@@ -85,15 +85,17 @@
       <input matInput placeholder="Ingrese la temporada o la categoria" formControlName="titulo">
     </mat-form-field>
 
-    <button mat-raised-button color="accent" (click)="cargarTodasCategorias()"> Todas las ofertas </button>
+    <button mat-raised-button color="accent" (click)="mostrarDiv()"> Todas las ofertas </button>
     <button mat-raised-button [disabled]="!ofertaNuevo.valid" color="accent" (click)="cargarOfertasTitulo()"> Buscar por Titulo</button>
  <!-- flip-card-container   <button mat-raised-button [disabled]="!ofertaNuevo.valid" color="accent" (click)="cargarOfertasPrecio()"> Buscar
       por Precio</button>
     -->
   </form>
 
+</div>
 
 
+<div class="d-none" id="ContFundamental">
 <div class="contenedorclasificados">
   <br>
   <br>
@@ -302,8 +304,60 @@
     </div>
   </div>
 </div>
-
 </div>
+
+<div class="d-none" id="contenedorFundamental1">
+
+  <br>
+  <br>
+  <h1 class="display-4 subtit">Resultado de su busqueda</h1>
+  <div id="contedorprincipal2">
+    <!-- flip-card-container -->
+    <div class="flip-card-container" style="--hue: 220" *ngFor="let oferta of listaBusqueda">
+      <div class="flip-card">
+
+        <div class="card-front">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{oferta.portada}} height="460" width="320">
+            <figcaption>Descuento: %{{oferta.idOferta.descuento}}</figcaption>
+          </figure>
+
+          <ul>
+            <li>{{oferta.titulo}}</li>
+            <li>Autor: {{oferta.idAuto.nombreAutor}}</li>
+            <li>Categoria: {{oferta.idCategori.nombre}}</li>
+            <li>Temporada: {{oferta.idOferta.temporada}}</li>
+            <li>
+              <p class="ticket__current-price">$ {{oferta.precio}}</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-back">
+          <figure>
+            <div class="img-bg"></div>
+            <img src={{oferta.portada}} height="460" width="320">
+          </figure>
+
+          <button>Comprar</button>
+
+          <div class="design-container">
+            <span class="design design--1"></span>
+            <span class="design design--2"></span>
+            <span class="design design--3"></span>
+            <span class="design design--4"></span>
+            <span class="design design--5"></span>
+            <span class="design design--6"></span>
+            <span class="design design--7"></span>
+            <span class="design design--8"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <br>
 
 <!-- end product 
