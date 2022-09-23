@@ -15,13 +15,6 @@ import { BookStoreService } from '../services/book-store.service';
 })
 export class OfertasComponent implements OnInit {
 
-  /*
-  //Función para el filtro de la tabla.
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.listaOferta.filter = filterValue.trim().toLowerCase();
-  }
-*/
   //Arreglo de datos
   listaOferta: any = [];
   listaFiccion: any = [];
@@ -83,8 +76,6 @@ export class OfertasComponent implements OnInit {
     this.cargarTodasFantasia();
 
   }
-
-
 
   //Cargas todos los libros con Ficcion
   cargarTodasFiccion() {

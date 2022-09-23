@@ -42,7 +42,7 @@ export class LoginComponent {
       console.log(data);
       localStorage.setItem('NombreUsuario',this.usuarioTemp);
       localStorage.setItem('token_value',data);
-      this.router.navigate(['/oferta']);
+      this.router.navigate(['/libro']);
       this.dialogRef.close();
     },
     (errorData)=> alert("El correo/contraseña son incorrectos."))
