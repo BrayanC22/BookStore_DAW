@@ -9,3 +9,7 @@ export interface VentaInterface {
     subtotal: number;
     totalPagar: number;
 }
+
+
+
+
